@@ -12,32 +12,26 @@
       <v-app-bar-title>DAN SURLARU</v-app-bar-title>
 
       <template v-slot:append>
-        <v-btn to="/home">Acasă</v-btn>
+        <v-btn size="large" to="/home">Acasă</v-btn>
 
         <div class="text-center">
-          <v-menu transition="scroll-y-transition" open-on-hover>
+          <v-menu open-on-hover transition="scroll-y-transition">
             <template v-slot:activator="{ props }">
-              <v-btn v-bind="props"> Resurse </v-btn>
+              <v-btn size="large" v-bind="props"> Resurse </v-btn>
             </template>
 
             <v-list>
-              <v-list-item
-                v-for="(item, index) in items"
-                :key="index"
-                :value="item"
-              >
-                <v-list-item-title :to="item.link">{{
-                  item.title
-                }}</v-list-item-title>
+              <v-list-item v-for="(item, index) in items" :key="index" link>
+                <v-list-item-title>{{ item.title }}</v-list-item-title>
               </v-list-item>
             </v-list>
           </v-menu>
         </div>
 
-        <v-btn to="/store">Magazin</v-btn>
-        <v-btn to="/listen-down">Listen & Download</v-btn>
-        <v-btn to="/about">Despre mine</v-btn>
-        <v-btn to="/contact">Contact</v-btn>
+        <v-btn size="large" to="/store">Magazin</v-btn>
+        <v-btn size="large" to="/listen-down">Listen & Download</v-btn>
+        <v-btn size="large" to="/about">Despre mine</v-btn>
+        <v-btn size="large" to="/contact">Contact</v-btn>
         <v-divider
           :thickness="1"
           class="border-opacity-50"
