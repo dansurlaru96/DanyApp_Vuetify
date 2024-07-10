@@ -15,13 +15,17 @@
         <v-btn size="large" to="/home">Acasă</v-btn>
 
         <div class="text-center">
-          <v-menu open-on-hover transition="scroll-y-transition">
+          <v-menu open-on-hover>
             <template v-slot:activator="{ props }">
               <v-btn size="large" v-bind="props"> Resurse </v-btn>
             </template>
-
             <v-list>
-              <v-list-item v-for="(item, index) in items" :key="index" link>
+              <v-list-item
+                v-for="(item, index) in items"
+                :key="index"
+                :to="item.link"
+                :value="index"
+              >
                 <v-list-item-title>{{ item.title }}</v-list-item-title>
               </v-list-item>
             </v-list>

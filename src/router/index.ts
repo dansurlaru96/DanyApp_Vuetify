@@ -9,11 +9,8 @@ import ListenDownView from "@/pages/ListenDownView.vue";
 import StudioView from "@/pages/StudioView.vue";
 
 const routes = [
-  {
-    path: "/home",
-    name: "Acasa",
-    component: HomeView,
-  },
+  { path: "/", redirect: "/home" },
+  { path: "/home", component: HomeView },
   {
     path: "/about",
     name: "Despre",
