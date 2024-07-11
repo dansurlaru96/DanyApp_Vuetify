@@ -5,7 +5,7 @@
       density="default"
       elevation="10"
       scroll-behavior="hide"
-      scroll-threshold="81"
+      scroll-threshold="200"
     >
       <template v-slot:prepend> </template>
 

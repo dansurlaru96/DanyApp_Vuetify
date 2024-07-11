@@ -1,0 +1,60 @@
+{
+  "produse": [
+    {
+      "id": 2,
+      "title": "Samsung Galaxy S24",
+      "description": "The best phone in the world",
+      "price": 1130,
+      "image": "https://www.samsung.com/us/smartphones/galaxy-s21-5g/_next/static/images/galaxy-s21-5g-overview-1-1b7b7b7b.png",
+      "category": "electronics"
+    },
+    {
+      "id": 3,
+      "title": "Asus Zenbook Pro Duo",
+      "description": "The best laptop in the world",
+      "price": 2399,
+      "image": "https://www.asus.com/media/global/products/4v3vzqzqjv3v7v7v/P_setting_000_1_90_end_500.png",
+      "category": "electronics"
+    },
+    {
+      "id": 4,
+      "title": "Apple Watch Series 7",
+      "description": "The best smartwatch in the world",
+      "price": 500,
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/44-alum-blue-sport-deepnavy-6s-nc?wid=2000&hei=2000&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1631710912000",
+      "category": "electronics"
+    },
+    {
+      "id": 5,
+      "title": "Apple AirPods Pro",
+      "description": "The best earbuds in the world",
+      "price": 250,
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=2000&hei=2000&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1617991017000",
+      "category": "electronics"
+    },
+    {
+      "id": 6,
+      "title": "Apple iPad Pro",
+      "description": "The best tablet in the world",
+      "price": 859,
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-pro-12-select-wifi-spacegray-202104_FMT_WHH?wid=940&hei=1112&fmt=jpeg&qlt=95&.v=1617126624000",
+      "category": "electronics"
+    },
+    {
+      "id": 7,
+      "title": "Apple MacBook Pro",
+      "description": "The best laptop in the world",
+      "price": 2599,
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/mbp-spacegray-select-202011_GEO_EMEA?wid=904&hei=840&fmt=jpeg&qlt=95&.v=1613672894000",
+      "category": "electronics"
+    },
+    {
+      "id": 8,
+      "title": "Apple iPhone 13 Pro",
+      "description": "The best phone in the world",
+      "price": 699,
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-13-pro-family-hero?wid=940&hei=1112&fmt=jpeg&qlt=95&.v=1631749352000",
+      "category": "electronics"
+    }
+  ]
+}
