@@ -7,10 +7,18 @@ import ArtistView from "@/pages/ArtistView.vue";
 import DiscografieView from "@/pages/DiscografieView.vue";
 import ListenDownView from "@/pages/ListenDownView.vue";
 import StudioView from "@/pages/StudioView.vue";
+import ProductDetails from "@/pages/ProductDetails.vue";
 
 const routes = [
-  { path: "/", redirect: "/home" },
-  { path: "/home", component: HomeView },
+  {
+    path: "/",
+    redirect: "/home",
+  },
+  {
+    path: "/home",
+    name: "Acasa",
+    component: HomeView,
+  },
   {
     path: "/about",
     name: "Despre",
@@ -45,6 +53,11 @@ const routes = [
     path: "/studio",
     name: "Studio",
     component: StudioView,
+  },
+  {
+    path: "/product/:id",
+    name: "ProductDetails",
+    component: ProductDetails,
   },
 ];
 

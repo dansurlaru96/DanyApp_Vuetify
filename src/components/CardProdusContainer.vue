@@ -1,45 +1,38 @@
 <template lang="">
-  <div class="d-flex flex-row justify-space-evenly flex-wrap justify-center">
+  <div class="d-flex flex-row justify-space-evenly flex-wrap">
     <CardProdus
-      image="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-      id="00"
-      title="Produsul Meu"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  "
-      price="100"
-      currency="MDL"
-      :discount="10"
-      :available="true"
-    />
-    <CardProdus
-      image="https://cdn.vuetifyjs.com/images/cards/docks.jpg"
-      id="01"
-      title="Produsul Meu"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  "
-      price="100"
-      currency="MDL"
-      :discount="10"
-      :available="true"
-    />
+      v-for="product in products"
+      :key="product.id"
+      :title="product.title"
+      :image="product.image"
+      :price="product.price"
+      :rating="product.rating.rate.count"
+      :currency="product.currency"
+    >
+    </CardProdus>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { defineComponent } from "vue";
 import CardProdus from "./CardProdus.vue";
+import axios from "axios";
 
 export default defineComponent({
   name: "CardProdusContainer",
   components: {
     CardProdus,
   },
-  created() {
-    fetch("http://localhost:3000/produse")
-      .then((response) => response.json())
-      .then((data) => console.log(data));
+  data() {
+    return {
+      products: [],
+    };
   },
-  updated() {
-
+  mounted() {
+    axios
+      .get("https://fakestoreapi.com/products")
+      .then((response) => (this.products = response.data))
+      .then((response) => console.log(response.data));
   },
-  
 });
 </script>
 <style lang=""></style>

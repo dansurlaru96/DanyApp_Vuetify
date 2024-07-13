@@ -4,15 +4,15 @@
       color="grey-darken-3"
       density="default"
       elevation="10"
-      scroll-behavior="hide"
-      scroll-threshold="200"
+      scroll-behavior="auto"
+      scroll-threshold="500"
     >
       <template v-slot:prepend> </template>
 
       <v-app-bar-title>DAN SURLARU</v-app-bar-title>
 
       <template v-slot:append>
-        <v-btn size="large" to="/home">Acasă</v-btn>
+        <v-btn size="large" rounded="none" to="/home">Acasă</v-btn>
 
         <div class="text-center">
           <v-menu open-on-hover>
@@ -74,6 +74,12 @@
           icon
           ><v-icon>mdi-spotify</v-icon></v-btn
         >
+        <v-btn
+          href="https://music.apple.com/us/artist/dan-surlaru/1449898549"
+          target="_blank"
+          icon
+          ><v-icon>mdi-apple</v-icon></v-btn
+        >
       </template>
     </v-app-bar>
     <v-main> </v-main>
@@ -82,6 +88,7 @@
 
 <script lang="ts">
 import { defineComponent } from "vue";
+
 export default defineComponent({
   name: "Navbar",
   data: () => ({
