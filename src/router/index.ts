@@ -7,7 +7,7 @@ import ArtistView from "@/pages/ArtistView.vue";
 import DiscografieView from "@/pages/DiscografieView.vue";
 import ListenDownView from "@/pages/ListenDownView.vue";
 import StudioView from "@/pages/StudioView.vue";
-import ProductDetails from "@/pages/ProductDetails.vue";
+import ProductDetail from "@/pages/ProductDetail.vue";
 
 const routes = [
   {
@@ -56,8 +56,9 @@ const routes = [
   },
   {
     path: "/product/:id",
-    name: "ProductDetails",
-    component: ProductDetails,
+    name: "ProductDetail",
+    component: ProductDetail,
+    props: true,
   },
 ];
 
