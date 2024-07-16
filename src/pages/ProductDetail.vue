@@ -1,22 +1,33 @@
 <template>
-  <div v-if="product">
-    <h1>{{ product.title }}</h1>
-    <img :src="product.image" :alt="product.title" />
-    <p>{{ product.description }}</p>
-    <p>{{ product.price }} {{ product.currency }}</p>
-    <p>Rating: {{ product.rating }}</p>
+  <div>
+    <h1>{{ title }}</h1>
+    <img :src="image" alt="Product Image" />
+    <p>{{ description }}</p>
+    <p>{{ price }} {{ currency }}</p>
+    <p>Rating: {{ rating }} ({{ rate }} votes)</p>
+    <p>Count: {{ count }}</p>
   </div>
 </template>
 
-<script>  
-
+<script>
 export default {
-  name: "ProductDetail",
-  props: ["id", "image", "title", "description", "price", "currency", "rating"],
-  data() {
-    return {
-      product: null,
-    };
+  props: [
+    "id",
+    "image",
+    "title",
+    "description",
+    "price",
+    "currency",
+    "rating",
+    "rate",
+    "count",
+  ],
+  created() {
+    // Fetch additional product details if necessary
   },
 };
 </script>
+
+<style scoped>
+/* Add your styles here */
+</style>

@@ -58,12 +58,17 @@ const routes = [
     path: "/product/:id",
     name: "ProductDetail",
     component: ProductDetail,
+  },
+  {
+    path: "/product-detail/:id",
+    name: "ProductDetail",
+    component: ProductDetail,
     props: true,
   },
 ];
 
 const router = createRouter({
-  history: createWebHistory(),
+  history: createWebHistory(import.meta.env.BASE_URL),
   routes,
 });
 
