@@ -63,7 +63,6 @@ const routes = [
     path: "/product-detail/:id",
     name: "ProductDetail",
     component: ProductDetail,
-    props: true,
   },
 ];
 

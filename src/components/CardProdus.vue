@@ -1,5 +1,5 @@
 <template>
-  <router-link :to="`/product/${id}`">
+  <div>
     <v-card
       class="ma-3"
       width="290"
@@ -15,22 +15,25 @@
         {{ price }} {{ currency }} EUR
       </v-card-text>
       <v-card-actions class="ma-2 pa-2 ga-4">
-        <v-btn
-          color="purple"
-          variant="flat"
-          block="block"
-          size="large"
-          @click="addToCart"
-        >
-          <v-icon> mdi-cart-plus </v-icon>Adauga in cos
+        <v-btn color="purple" variant="flat" text="" @click="addToCart">
+          <v-icon> mdi-cart-plus </v-icon> În coș
         </v-btn>
+
+        <router-link :to="`/product-detail${id}`"
+          ><v-btn @click="goToProductDetail" color="purple" variant="outlined">
+            <v-icon> mdi-eye </v-icon> Detalii
+          </v-btn></router-link
+        >
       </v-card-actions>
     </v-card>
-  </router-link>
+  </div>
 </template>
 
 <script>
-export default {
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "CardProdus",
   props: {
     id: String,
     image: String,
@@ -41,15 +44,27 @@ export default {
     rating: Number,
     rate: Number,
     count: Number,
-    variant: String,
   },
-  methods: {
+  memethods: {
+    goToProductDetail() {
+      this.$router.push({
+        name: "ProductDetail",
+        params: {
+          id: this.id,
+        },
+      });
+    },
     addToCart() {
-      // Your add to cart logic
-      
+      this.$store.commit("addToCart", {
+        id: this.id,
+        title: this.title,
+        price: this.price,
+        currency: this.currency,
+        image: this.image,
+      });
     },
   },
-};
+});
 </script>
 
 <style scoped>
