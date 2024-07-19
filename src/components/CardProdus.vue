@@ -15,15 +15,24 @@
         {{ price }} {{ currency }} EUR
       </v-card-text>
       <v-card-actions class="ma-2 pa-2 ga-4">
-        <v-btn color="purple" variant="flat" text="" @click="addToCart">
+        <v-btn
+          width="auto"
+          color="purple"
+          variant="flat"
+          text=""
+          @click="addToCart"
+        >
           <v-icon> mdi-cart-plus </v-icon> În coș
         </v-btn>
 
-        <router-link :to="`/product-detail${id}`"
-          ><v-btn @click="goToProductDetail" color="purple" variant="outlined">
-            <v-icon> mdi-eye </v-icon> Detalii
-          </v-btn></router-link
+        <v-btn
+          width="auto"
+          @click="goToProductDetail"
+          color="purple"
+          variant="outlined"
         >
+          <v-icon>mdi-eye</v-icon> Detalii
+        </v-btn>
       </v-card-actions>
     </v-card>
   </div>
@@ -45,7 +54,7 @@ export default defineComponent({
     rate: Number,
     count: Number,
   },
-  memethods: {
+  methods: {
     goToProductDetail() {
       this.$router.push({
         name: "ProductDetail",

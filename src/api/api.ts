@@ -1,30 +1,41 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "https://fakestoreapi.com/products",
+  baseURL: "https://fakestoreapi.com/", // url de baza pentru api
   headers: {
     "Content-Type": "application/json",
   },
 });
 
 const api = {
+  // GET request pentru a prelua toate produsele
   getProducts() {
     return axiosInstance.get("/products");
   },
+
+  // GET request pentru a prelua un singur produs
   getProduct(id: number) {
-    return axiosInstance.get(`/products/${id}`);
+    return axiosInstance.get(`/products?=${id}`);
   },
-  addProduct(product: object) {
-    return axiosInstance.post("/products", product);
+
+  // POST request pentru a crea un produs nou
+  addProduct(produs: object) {
+    return axiosInstance.post("/products", produs);
   },
-  updateProduct(id: number, product: object) {
-    return axiosInstance.put(`/products/${id}`, product);
+
+  // PUT request pentru a actualiza total un produs existent
+  updateProduct(id: number, produs: object) {
+    return axiosInstance.put(`/produse/${id}`, produs);
   },
-  patchProduct(id: number, product: object) {
-    return axiosInstance.patch(`/products/${id}`, product);
+
+  // PATCH request pentru a actualiza parțial un produs
+  patchProduct(id: number, produs: object) {
+    return axiosInstance.patch(`/produse/${id}`, produs);
   },
+
+  // DELETE request pentru a șterge produsul
   deleteProduct(id: number) {
-    return axiosInstance.delete(`/products/${id}`);
+    return axiosInstance.delete(`/produse/${id}`);
   },
 };
 
