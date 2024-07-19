@@ -30,9 +30,6 @@
           <v-btn color="purple" size="x-large" elevation="4" @click="addToCart">
             <v-icon>mdi-cart-plus</v-icon> Adauga in cos
           </v-btn>
-          <v-btn color="purple" size="x-large" elevation="4" @click="addToCart">
-            <v-icon>mdi-phone </v-icon> Cumpără acum
-          </v-btn>
         </div>
       </div>
     </div>
@@ -90,6 +87,10 @@ export default {
       product: ref({}),
     };
   },
+  nameRules: [
+    (v) => !!v || "Câmp obligatoriu",
+    (v) => v.length <= 15 || "Numele să conțină maxim 15 caractere",
+  ],
 };
 </script>
 

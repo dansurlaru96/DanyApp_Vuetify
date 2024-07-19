@@ -1,12 +1,6 @@
 <template>
   <div>
-    <v-card
-      class="ma-3"
-      width="290"
-      hover="4dp"
-      density="confortable"
-      :variant="variant"
-    >
+    <v-card class="ma-3" width="290" hover="4dp" :variant="variant">
       <v-card-item>
         <v-img :src="image" height="200"></v-img>
         <v-card-title> {{ title }} </v-card-title>
