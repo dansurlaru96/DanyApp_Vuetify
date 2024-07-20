@@ -1,12 +1,15 @@
 <template lang="">
   <div>
-    <v-parallax src="@/assets/bg_parallax.jpg" height="600">
-      <v-container
-        class="height-300 d-flex flex-column flex-wrap align-center justify-center ma-8 text-white"
-      >
+    <v-parallax
+      src="@/assets/bg_parallax.jpg"
+      height="690"
+      jumbotron
+      class="text-white"
+    >
+      <div class="d-flex flex-column flex-wrap align-center pa-8">
         <div>
           <v-img
-            width="300"
+            width="230"
             aspect-ratio="1/1"
             class="rounded-circle elevation-23 align-center mb-4"
             src="../assets/avatar_hero.jpg"
@@ -14,14 +17,15 @@
         </div>
         <div>
           <h1
-            class="text-h1 font-weight-bold text-center"
+            class="text-h3 font-weight-bold text-center"
             style="
               background: linear-gradient(
                 to right,
                 #00a9ff,
                 #89cff3,
                 #a0e9ff,
-                #cdf5fd
+                #cdf5fd,
+                #f0f9ff
               );
               -webkit-text-fill-color: transparent;
               -webkit-background-clip: text;
@@ -34,11 +38,11 @@
             class="border-opacity-75 ma-4"
             color="white"
           ></v-divider>
-          <h2 class="font-weight-light text-center">
+          <h2 class="font-weight-light text-center text-wrap">
             MUSICIAN - FRONT-END WEB DEVELOPER
           </h2>
         </div>
-        <div class="d-flex justify-center ga-2 mt-4">
+        <div class="d-flex flex-wrap justify-center ga-2 ma-4">
           <v-chip size="large" prepend-icon="mdi-language-html5"> HTML </v-chip>
           <v-chip size="large" prepend-icon="mdi-language-css3"> CSS </v-chip>
           <v-chip size="large" prepend-icon="mdi-language-javascript">
@@ -51,14 +55,17 @@
           <v-chip size="large" prepend-icon="mdi-tailwind"> Tailwind </v-chip>
           <v-chip size="large" prepend-icon="mdi-bootstrap"> Bootstrap </v-chip>
         </div>
-      </v-container>
+      </div>
     </v-parallax>
+
     <div>
       <h1 class="ma-7 text-center">Cum se naste o melodie?</h1>
 
-      <v-divider dark inset thickness="2"></v-divider>
+      <v-divider dark thickness="2"></v-divider>
 
-      <div class="d-flex flex-wrap justify-space-between pa-4">
+      <div
+        class="d-flex flex-wrap justify-space-between justify-center align-center align-self-center pa-3"
+      >
         <div>
           <v-card class="mx-auto my-8" elevation="16" max-width="344">
             <v-img cover src="../assets/inspiration.jpg"></v-img>

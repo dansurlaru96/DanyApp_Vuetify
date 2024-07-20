@@ -10,7 +10,7 @@ declare module 'vue' {
     CardProdus: typeof import('./src/components/CardProdus.vue')['default']
     CardProdusContainer: typeof import('./src/components/CardProdusContainer.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
-    Navbar: typeof import('./src/components/Navbar.vue')['default']
+    Navbar: typeof import('./src/components/navbar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ScrollToTop: typeof import('./src/components/scrollToTop.vue')['default']
