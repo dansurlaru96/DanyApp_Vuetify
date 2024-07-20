@@ -62,86 +62,52 @@
       <h1 class="ma-7 text-center">Cum se naste o melodie?</h1>
 
       <v-divider dark thickness="2"></v-divider>
-
       <div
-        class="d-flex flex-wrap justify-space-between justify-center align-center align-self-center pa-3"
+        class="d-flex flex-wrap justify-space-evenly justify-center align-center align-self-center ma-4"
       >
-        <div>
-          <v-card class="mx-auto my-8" elevation="16" max-width="344">
-            <v-img cover src="../assets/inspiration.jpg"></v-img>
-            <v-card-item>
-              <v-card-title> Inspirație </v-card-title>
-            </v-card-item>
+        <CardInfo
+          image="./src/assets/inspiration.jpg"
+          subject="Inspirație"
+          text="Totul începe cu o idee sau o emoție pe care vrei să o exprimi. Inspirația poate veni din experiențe personale, natură, alte melodii sau chiar dintr-o simplă frază."
+        ></CardInfo>
 
-            <v-card-text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </v-card-text>
-          </v-card>
-        </div>
+        <CardInfo
+          image="./src/assets/composing.webp"
+          subject="Compoziția"
+          text="Aici începi să pui ideile pe hârtie sau într-un software de producție muzicală. Alegi acordurile, melodia principală și structura piesei (versuri, refren, punte etc.)."
+        ></CardInfo>
 
-        <div>
-          <v-card class="mx-auto my-8" elevation="16" max-width="344">
-            <v-img cover src="../assets/composing.webp"></v-img>
-            <v-card-item>
-              <v-card-title> Compoziția </v-card-title>
-            </v-card-item>
+        <CardInfo
+          image="./src/assets/arranging.jpg"
+          subject="Aranjamentul"
+          text="După ce ai melodia de bază, începi să adaugi alte elemente, cum ar fi armonii, ritmuri și instrumente suplimentare. Acest pas ajută la crearea unei texturi mai bogate și mai complexe."
+        ></CardInfo>
 
-            <v-card-text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </v-card-text>
-          </v-card>
-        </div>
+        <CardInfo
+          image="./src/assets/recording.jpg"
+          subject="Înregistrarea"
+          text="Odată ce aranjamentul este finalizat, începi să înregistrezi fiecare parte a melodiei. Acest lucru poate implica înregistrarea vocalelor, instrumentelor și a altor sunete."
+        ></CardInfo>
 
-        <div>
-          <v-card class="mx-auto my-8" elevation="16" max-width="344">
-            <v-img cover src="../assets/arranging.jpg"></v-img>
-            <v-card-item>
-              <v-card-title> Aranjamentul </v-card-title>
-            </v-card-item>
-
-            <v-card-text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </v-card-text>
-          </v-card>
-        </div>
-
-        <div>
-          <v-card class="mx-auto my-8" elevation="16" max-width="344">
-            <v-img cover src="../assets/recording.jpg"></v-img>
-            <v-card-item>
-              <v-card-title> Înregistrarea </v-card-title>
-            </v-card-item>
-
-            <v-card-text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </v-card-text>
-          </v-card>
-        </div>
-
-        <div>
-          <v-card class="mx-auto my-8" elevation="16" max-width="344">
-            <v-img cover src="../assets/mix-master.webp"></v-img>
-            <v-card-item>
-              <v-card-title> Mixajul </v-card-title>
-            </v-card-item>
-
-            <v-card-text>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
-            </v-card-text>
-          </v-card>
-        </div>
+        <CardInfo
+          image="./src/assets/mix-master.webp"
+          subject="Mixajul"
+          text="După înregistrare, piesa trece prin procesul de mixaj, unde toate elementele sunt echilibrate și ajustate pentru a suna bine împreună. Masterizarea este etapa finală, unde piesa este pregătită pentru distribuție, asigurându-se că sună bine pe toate dispozitivele și platformele."
+        ></CardInfo>
       </div>
     </div>
+    <CarouselImg />
   </div>
 </template>
 <script>
+import CarouselImg from "../components/CarouselImg.vue";
+import CardInfo from "../components/CardInfo.vue";
 export default {
   name: "HomeView",
+  components: {
+    CarouselImg,
+    CardInfo,
+  },
 };
 </script>
 <style lang=""></style>

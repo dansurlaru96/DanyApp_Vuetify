@@ -1,5 +1,7 @@
 <template>
-  <div class="d-flex flex-wrap justify-content-center">
+  <div
+    class="d-flex flex-wrap justify-space-evenly justify-center align-center align-self-center ma-2"
+  >
     <CardProdus
       v-for="product in products"
       :key="product.id"

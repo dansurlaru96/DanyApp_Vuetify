@@ -7,8 +7,10 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    CardInfo: typeof import('./src/components/CardInfo.vue')['default']
     CardProdus: typeof import('./src/components/CardProdus.vue')['default']
     CardProdusContainer: typeof import('./src/components/CardProdusContainer.vue')['default']
+    CarouselImg: typeof import('./src/components/CarouselImg.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Navbar: typeof import('./src/components/navbar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
