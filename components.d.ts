@@ -11,10 +11,13 @@ declare module 'vue' {
     CardProdus: typeof import('./src/components/CardProdus.vue')['default']
     CardProdusContainer: typeof import('./src/components/CardProdusContainer.vue')['default']
     CarouselImg: typeof import('./src/components/CarouselImg.vue')['default']
+    Footer: typeof import('./src/components/Footer.vue')['default']
+    FooterLayout: typeof import('./src/components/FooterLayout.vue')['default']
     HelloWorld: typeof import('./src/components/HelloWorld.vue')['default']
     Navbar: typeof import('./src/components/navbar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ScrollToTop: typeof import('./src/components/scrollToTop.vue')['default']
+    SocialBtn: typeof import('./src/components/SocialBtn.vue')['default']
   }
 }

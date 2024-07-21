@@ -43,17 +43,17 @@
           </h2>
         </div>
         <div class="d-flex flex-wrap justify-center ga-2 ma-4">
-          <v-chip size="large" prepend-icon="mdi-language-html5"> HTML </v-chip>
-          <v-chip size="large" prepend-icon="mdi-language-css3"> CSS </v-chip>
-          <v-chip size="large" prepend-icon="mdi-language-javascript">
+          <v-chip size="large" variant="elevated" color="#e14f1c" prepend-icon="mdi-language-html5"> HTML </v-chip>
+          <v-chip size="large" variant="elevated" color="#2d52e5" prepend-icon="mdi-language-css3"> CSS </v-chip>
+          <v-chip size="large" variant="elevated" color="#F7E025" prepend-icon="mdi-language-javascript">
             JavaScript
           </v-chip>
-          <v-chip size="large" prepend-icon="mdi-vuejs"> Vue </v-chip>
-          <v-chip size="large" prepend-icon="mdi-language-typescript">
+          <v-chip size="large" variant="elevated" color="rgb(71,186,135)" prepend-icon="mdi-vuejs"> Vue </v-chip>
+          <v-chip size="large" variant="elevated" color="rgb(55,124,200)" prepend-icon="mdi-language-typescript">
             TypeScript
           </v-chip>
-          <v-chip size="large" prepend-icon="mdi-tailwind"> Tailwind </v-chip>
-          <v-chip size="large" prepend-icon="mdi-bootstrap"> Bootstrap </v-chip>
+          <v-chip size="large" variant="elevated" color="rgb(72,170,178)" prepend-icon="mdi-tailwind"> Tailwind </v-chip>
+          <v-chip size="large" variant="elevated" color="rgb(140,25,252)" prepend-icon="mdi-bootstrap"> Bootstrap </v-chip>
         </div>
       </div>
     </v-parallax>

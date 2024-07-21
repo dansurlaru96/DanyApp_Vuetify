@@ -1,10 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "@/pages/HomeView.vue";
-import AboutView from "@/pages/AboutView.vue";
 import ContactView from "@/pages/ContactView.vue";
 import StoreView from "@/pages/StoreView.vue";
-import ArtistView from "@/pages/ArtistView.vue";
-import DiscografieView from "@/pages/DiscografieView.vue";
 import ListenDownView from "@/pages/ListenDownView.vue";
 import StudioView from "@/pages/StudioView.vue";
 import ProductDetail from "@/pages/ProductDetail.vue";
@@ -20,11 +17,6 @@ const routes = [
     component: HomeView,
   },
   {
-    path: "/about",
-    name: "Despre",
-    component: AboutView,
-  },
-  {
     path: "/contact",
     name: "Contact",
     component: ContactView,
@@ -35,16 +27,6 @@ const routes = [
     component: StoreView,
   },
   {
-    path: "/artist",
-    name: "Interpreti",
-    component: ArtistView,
-  },
-  {
-    path: "/discografie",
-    name: "Discografie",
-    component: DiscografieView,
-  },
-  {
     path: "/listen-down",
     name: "Asculta si Descarca",
     component: ListenDownView,
@@ -53,11 +35,6 @@ const routes = [
     path: "/studio",
     name: "Studio",
     component: StudioView,
-  },
-  {
-    path: "/product/:id",
-    name: "ProductDetail",
-    component: ProductDetail,
   },
   {
     path: "/product-detail/:id",
