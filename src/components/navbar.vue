@@ -42,7 +42,19 @@
     </v-list-item>
 
     <v-container class="text-center">
-      <SocialBtn />
+      <v-btn :ripple="false" variant="plain" rounded="0" icon="mdi-facebook"
+        href="https://www.facebook.com/dan.surlaru.promusic" target="_blank"></v-btn>
+      <v-btn :ripple="false" variant="plain" rounded="0" icon="mdi-instagram" href="https://instagram.com/danypromusic"
+        target="_blank"></v-btn>
+      <v-btn :ripple="false" variant="plain" rounded="0" icon="mdi-linkedin"
+        href="https://www.linkedin.com/in/dan-surlaru-promusic-418a072a3/" target="_blank"></v-btn>
+      <v-btn :ripple="false" variant="plain" rounded="0" icon="mdi-youtube"
+        href="https://www.youtube.com/@dansurlaru/featured" target="_blank"></v-btn>
+      <v-btn :ripple="false" variant="plain" rounded="0" icon="mdi-spotify"
+        href="https://open.spotify.com/artist/4viXypcCjfNp3LrDQXdzbf?go=1&sp_cid=e7e7564b5f5e7489b13d62256216a2b7&utm_source=embed_player_p&utm_medium=desktop&nd=1&dlsi=7690dae220434f38"
+        target="_blank"></v-btn>
+      <v-btn :ripple="false" variant="plain" rounded="0" icon="mdi-apple"
+        href="https://music.apple.com/md/artist/dan-surlaru/1449898549" target="_blank"></v-btn>
     </v-container>
 
   </v-list>

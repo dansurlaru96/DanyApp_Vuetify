@@ -15,8 +15,7 @@
     </div>
 </template>
 <script>
-import { defineComponent } from "vue";
-
+import { defineComponent } from 'vue';
 export default defineComponent({
     name: "SocialBtn",
     props: {
@@ -33,13 +32,7 @@ export default defineComponent({
             required: true
         }
     },
-    defaults: {
-        VBtn: {
-            variant: "text",
-        }
-    }
 });
-
 </script>
 <style lang="">
 

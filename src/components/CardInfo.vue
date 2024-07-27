@@ -2,8 +2,8 @@
   <div>
     <v-card
       class="mx-auto my-8"
-      elevation="16"
-      max-width="330"
+      elevation="6"
+      max-width="320"
       outlined
       height="400"
     >

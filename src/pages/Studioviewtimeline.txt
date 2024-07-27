@@ -1,0 +1,146 @@
+<v-timeline class='flex-wrap' side="end" density="comfortable">
+    <v-timeline-item size="large" dot-color="indigo-darken-1" fill-dot icon="mdi-instrument-triangle" >
+      
+      <template v-slot:opposite>
+        <span>Pasul 1</span>
+      </template>
+      <v-card variant="tonal"
+      >
+        <v-card-title class="text-h5">
+          Gruparea percutiilor
+        </v-card-title>
+        <v-card-text>Gruparea percutiei intr-un subgrup. Am creat un canal nou de subgrup (sau bus, sau sub-mix), pe care am directionat fiecare din cele 7 canale rezervate percutiei. Acest pas este unul de organizare, care usureaza munca, nu este strict necesar. Mai tarziu, vei putea aplica efecte si modifica setarile intregului set de percutie, fara a fi nevoie sa modifici pe rand fiecare din cele 7 canale.</v-card-text>
+      </v-card>
+    </v-timeline-item>
+
+    <v-timeline-item size="large" dot-color="yellow-darken-4" fill-dot icon="mdi-account-multiple" >
+      
+      <template v-slot:opposite>
+        <span>Pasul 2</span>
+      </template>
+      <v-card variant='tonal'>
+        <v-card-title class="text-h5">
+          Gruparea vocilor
+        </v-card-title>
+        <v-card-text>Gruparea vocilor intr-un nou subgrup. Din aceleasi motive pentru care am grupat si percutia in subgrup.</v-card-text>
+      </v-card>
+    </v-timeline-item>
+
+    <v-timeline-item size="large" dot-color="light-green-darken-3" fill-dot icon="mdi-music-note" >
+      
+      <template v-slot:opposite>
+        <span>Pasul 3</span>
+      </template>
+      <v-card variant='tonal'>
+        <v-card-title class="text-h5">
+          Gruparea instrumentelor cu clape
+        </v-card-title>
+        <v-card-text>Gruparea clapelor intr-un nou subgrup, pentru ca este pe doua canale, si vreau sa operez cu efecte si modificari simultan pentru ambele canale.</v-card-text>
+      </v-card>
+    </v-timeline-item>
+
+    <v-timeline-item size="large" dot-color="deep-orange-accent-4" fill-dot icon="mdi-music" >
+      
+      <template v-slot:opposite>
+        <span>Pasul 4</span>
+      </template>
+      <v-card variant='tonal'>
+        <v-card-title class="text-h5">
+          Gruparea instrumentelor in sub-mixuri
+        </v-card-title>
+        <v-card-text>Mixarea unui sub-mix. Incepem cu percutia. La acest pas trebuie sa pui pe solo intreaga percutie (deja se vede avantajul subgrupului, pentru ca daca pui pe solo grupul de percutie, se seteaza singure pe solo toate canalele de percutie), si sa alegi un loc din piesa unde se aud toate elementele sale simultan.
+          <br/>
+          <br/>
+
+        Pune sa se repete acea portiune, si incepe sa faci mixajul: regleaza nivelurile fiecarui element de percutie in raport cu celalalte astfel incat sa sune cat mai uniform, sa se auda echilibrat toate. Incepe de exemplu cu toba mare, seteaz-o sa bata pana in -15 dB. Asta poate fi reperul, dupa care reglezi pe rand nivelurile celorlante elemente de percutie.
+        <br/>
+        <br/>
+
+        Si pentru ca este captata cu doua microfoane, vei avea un mic defazaj intre cele doua, care va trebui compensat. Poti vizualiza grafic daca cele doua canale de toba se suprapun perfect. In cazul meu a fost nevoie doar sa inversez faza de pe unul din cele doua canale.
+        <br/>
+        <br/>
+
+        Apoi urmeaza panoramarea celor doua tom-uri, stanga-dreapta, apoi panoramarea premierului si a cinelelor, inclusiv fuscinelului. Asculta percutia cu atentie si regleaza nivelul fiecarui canal in functie de reperul dat de toba mare.
+        <br/>
+        <br/>
+
+        Daca ai setat acel reper la -15 dB, ar trebui sa lucrezi la un volum destul de mic incat toata percutia sa ramana in limite rezonabile astfel incat indicatorul de nivel sa nu bata pe rosu. Nu uita ca elementele bateriei la mixare se insumeaza, ridicand nivelul total al percutiei, astfel ca la finalul mixarii percutiei, percutia singura sa ajunga pe indicatorul de nivel ceva mai sus decat reperul de la care ai plecat. Uneori mult mai sus datorita varfurilor date de premier sau toba mare.
+        <br/>
+        <br/>
+
+        In acest moment, fader-ul de pe canalul subgrupului de percutie ar trebui sa fie neatins, pe zero. La el vei umbla cand reglezi nivelul bateriei in functie de restul instrumentelor si vocilor. Un limitator sau/si compresor ar fi util pe acest canal de subgrup al percutiei, dar folosit cu atentie. De pe acum, trebuie sa te gandesti ca finalul mixului va urma sa treaca prin procesul de masterizare, si trebuie sa faci mixul astfel incat cel care va masteriza piesa sa aiba spatiu de lucru (headroom) in gama dinamica.</v-card-text>
+      </v-card>
+    </v-timeline-item>
+
+    <v-timeline-item size="large" dot-color="cyan-darken-2" fill-dot icon="mdi-tune-vertical" >
+      
+      <template v-slot:opposite>
+        <span>Pasul 5</span>
+      </template>
+      <v-card variant='tonal'>
+        <v-card-title class="text-h5">
+          Mixarea unui submix
+        </v-card-title>
+        <v-card-text>Mixarea unui alt sub-mix. In mod similar mixezi si vocile intre ele, luand ca reper vocea principala, pe care o reglezi sa nu treaca de -20dB, iar vocile secundare, sau de fundal, le reglezi in functie de cea principala. Un efect frumos este sa lasi vocea principala pe mijloc, iar cele secundare sa le panoramezi fiecare in directii opuse, undeva la 40-50%.</v-card-text>
+      </v-card>
+    </v-timeline-item>
+
+    <v-timeline-item size="large" dot-color="light-blue-darken-3" fill-dot icon="mdi-music-note" >
+      
+      <template v-slot:opposite>
+        <span>Pasul 6</span>
+      </template>
+      <v-card variant='tonal'>
+        <v-card-title class="text-h5">
+          Mixarea impreuna a submixurilor
+        </v-card-title>
+        <v-card-text>Acum ai doua subgrupuri mixate fiecare separat. E timpul sa le mixezi impreuna, adica percutia cu vocile. Pune cele doua subgrupuri pe solo, astfel incat sa auzi intreaga percutie si toate vocile. Seteaza percutia de exemplu sa nu treaca de -15dB, din fader-ul subgrupului, iar apoi mixeaza vocile cu percutia. Cele doua se insumeaza, si nivelul total iarasi creste, insa mai ai de adaugat si celalalte instrumente ramase, deci la final vei avea oricum un nivel mai ridicat per total.</v-card-text>
+      </v-card>
+    </v-timeline-item>
+
+    <v-timeline-item size="large" dot-color="pink-darken-2" fill-dot icon="mdi-guitar-electric" >
+      
+      <template v-slot:opposite>
+        <span>Pasul 7</span>
+      </template>
+      <v-card variant='tonal'>
+        <v-card-title class="text-h5">
+          Mixarea chitarei bass cu bateria
+        </v-card-title>
+          <v-card-text>Mixarea chitarei bass cu bateria. Seteaza sa auzi doar subgrupul de baterie si canalul chitara bass, fara voci. Din nou, poti folosi ceva compresie sau/si egalizare, insa e bine sa folosesti doar daca este nevoie. Daca suna bine, lasa-le asa. Nu aplica efecte daca nu este necesar.
+          <br/>
+          <br/>
+          Eu am dublat canalul de bass si pe cel dublat am aplicat o compresie dinamica mare, si usoare distorsiuni, pentru a-l face mai prezent, iar cele doua canale le-am mixat intre ele ca nivel, unul in functie de celalalt (sub -20 dB fiecare), dar si impreuna sa nu depaseasca -15 dB, eventual usor, pe alocuri.
+
+          Astfel setata chitara bass, am mixat-o cu grupul de percutie. Cand suna bine, da drumul si la subgrupul de voci sa il auzi, si verifica ca cele trei elemente (percutie, bass si voci) sa sune bine si uniform impreuna. Fa ajustarile necesare daca e cazul, si asculta din nou.
+        </v-card-text>
+      </v-card>
+    </v-timeline-item>
+
+    <v-timeline-item size="large" dot-color="deep-purple-lighten-1" fill-dot icon="mdi-trumpet" >
+      
+      <template v-slot:opposite>
+        <span>Pasul 8</span>
+      </template>
+      <v-card variant='tonal'>
+        <v-card-title class="text-h5">
+          Mixarea instrumentelor de suflat
+        </v-card-title>
+        <v-card-text>Mixarea instrumentelor cu clape. Seteaza sa auzi doar subgrupul de clape si canalul de chitara bass, fara voci. Mixeaza-le intre ele, si apoi adauga-le la mixul general. Verifica ca suna bine si uniform impreuna cu celelalte elemente. Fa ajustarile necesare daca e cazul, si asculta din nou.</v-card-text>
+      </v-card> 
+    </v-timeline-item>
+
+    <v-timeline-item size="large" dot-color="red-darken-2" fill-dot icon="mdi-music-note" >
+      
+      <template v-slot:opposite>
+        <span>Pasul 9</span>
+      </template>
+      <v-card variant='tonal'>
+        <v-card-title class="text-h5">
+          Mixarea finala
+        </v-card-title>
+        <v-card-text>Mixarea finala. Seteaza sa auzi toate elementele mixului, fara solo-uri. Mixeaza-le intre ele, si verifica ca suna bine si uniform impreuna. Fa ajustarile necesare daca e cazul, si asculta din nou. Daca suna bine, atunci ai terminat mixajul. Daca nu suna bine, fa ajustarile necesare si asculta din nou. Repeta pana suna bine.</v-card-text>
+      </v-card>
+    </v-timeline-item>
+
+  </v-timeline>
