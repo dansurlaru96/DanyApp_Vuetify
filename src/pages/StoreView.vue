@@ -14,15 +14,25 @@
               label="Cauta produs"
               outlined
               dense
+              clearable
               @input="searchProduct"
             ></v-text-field>
           </v-card-item>
           <v-card-item>
-            <v-select width="300" label="Sorteaza dupa" outlined dense>
-              <v-select-item value="1">Pret crescator</v-select-item>
-              <v-select-item value="2">Pret descrescator</v-select-item>
-              <v-select-item value="3">Rating</v-select-item>
-            </v-select>
+            <v-select
+              width="300"
+              outlined
+              dense
+              clearable
+              label="Selectează o opțiune"
+              :items="[
+                'Preț crescător',
+                'Preț descrescător',
+                'Alfabetic A-Z',
+                'Alfabetic Z-A',
+              ]"
+              @change="sortProducts"
+            ></v-select>
           </v-card-item>
           <v-card-item>
             <v-btn
@@ -59,6 +69,7 @@
 import { defineComponent } from "vue";
 import axios from "axios";
 import CardProdus from "../components/CardProdus.vue";
+
 export default defineComponent({
   name: "StoreView",
   components: {
@@ -94,6 +105,27 @@ export default defineComponent({
       } else {
         this.products = this.products.filter((product) =>
           product.title.toLowerCase().includes(searchTerm)
+        );
+      }
+    },
+    sortProducts(event: Event) {
+      let target = event.target as HTMLSelectElement;
+      let selectedOption = target.value;
+      if (selectedOption == "Preț crescător") {
+        this.products = this.products.sort(
+          (a: any, b: any) => a.price - b.price
+        );
+      } else if (selectedOption == "Preț descrescător") {
+        this.products = this.products.sort(
+          (a: any, b: any) => b.price - a.price
+        );
+      } else if (selectedOption == "Alfabetic A-Z") {
+        this.products = this.products.sort((a: any, b: any) =>
+          a.title.localeCompare(b.title)
+        );
+      } else if (selectedOption == "Alfabetic Z-A") {
+        this.products = this.products.sort((a: any, b: any) =>
+          b.title.localeCompare(a.title)
         );
       }
     },
