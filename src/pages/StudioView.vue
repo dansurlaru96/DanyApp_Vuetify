@@ -5,7 +5,7 @@
     class="low-contrast-image"
   >
     <div class="text-center text-white ma-15">
-      <h1 class="text-h1">Studio</h1>
+      <h1 class="text-h3">Studio</h1>
       <p class="text-h5">
         Transformă-ți camera în studio de înregistrări cu costuri minime
       </p>

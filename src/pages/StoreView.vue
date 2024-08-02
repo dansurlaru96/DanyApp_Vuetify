@@ -20,6 +20,8 @@
           </v-card-item>
           <v-card-item>
             <v-select
+              key="sort"
+              v-select
               width="300"
               outlined
               dense
@@ -103,29 +105,8 @@ export default defineComponent({
           this.products = response.data;
         });
       } else {
-        this.products = this.products.filter((product) =>
+        this.products = this.products.filter((product: any) =>
           product.title.toLowerCase().includes(searchTerm)
-        );
-      }
-    },
-    sortProducts(event: Event) {
-      let target = event.target as HTMLSelectElement;
-      let selectedOption = target.value;
-      if (selectedOption == "Preț crescător") {
-        this.products = this.products.sort(
-          (a: any, b: any) => a.price - b.price
-        );
-      } else if (selectedOption == "Preț descrescător") {
-        this.products = this.products.sort(
-          (a: any, b: any) => b.price - a.price
-        );
-      } else if (selectedOption == "Alfabetic A-Z") {
-        this.products = this.products.sort((a: any, b: any) =>
-          a.title.localeCompare(b.title)
-        );
-      } else if (selectedOption == "Alfabetic Z-A") {
-        this.products = this.products.sort((a: any, b: any) =>
-          b.title.localeCompare(a.title)
         );
       }
     },
