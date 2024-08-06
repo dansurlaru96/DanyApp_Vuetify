@@ -22,19 +22,14 @@
 
     <v-tabs-window v-model="tab">
       <v-tabs-window-item value="one">
-        <v-banner class="ma-5" width="800" lines="two" text="" :stacked="false">
-        </v-banner>
-
         <v-alert
           icon="mdi-alert"
           class="ma-8"
           v-model="alert"
           border="start"
-          color="warning"
+          color="error"
           variant="tonal"
           elevation="2"
-          dark
-          width="800"
           outlined
         >
           Imi cer scuze. Aceasta sectiune este in deplina desfasurare a
