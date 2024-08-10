@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { defineComponent, onMounted } from "vue";
+import { defineComponent } from "vue";
 import Navbar from "./components/navbar.vue";
 import scrollToTop from "./components/scrollToTop.vue";
 import FooterLayout from "./components/FooterLayout.vue";
@@ -18,9 +18,6 @@ export default defineComponent({
     Navbar,
     scrollToTop,
     FooterLayout,
-  },
-  setup() {
-    onMounted(() => { });
   },
 });
 </script>

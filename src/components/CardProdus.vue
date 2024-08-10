@@ -57,19 +57,8 @@ export default defineComponent({
         },
       });
     },
-    addToCart() {
-      this.$store.commit("addToCart", {
-        id: this.id,
-        title: this.title,
-        price: this.price,
-        currency: this.currency,
-        image: this.image,
-      });
-    },
   },
 });
 </script>
 
-<style scoped>
-/* Your styles */
-</style>
+<style></style>
