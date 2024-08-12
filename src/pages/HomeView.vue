@@ -123,7 +123,7 @@
         ></CardInfo>
 
         <CardInfo
-          image="./src/assets/arranging.jpg"
+          image="../src/assets/arranging.jpg"
           subject="Aranjamentul"
           text="După ce ai melodia de bază, începi să adaugi alte elemente, cum ar fi armonii, ritmuri și instrumente suplimentare. Acest pas ajută la crearea unei texturi mai bogate și mai complexe."
         ></CardInfo>
