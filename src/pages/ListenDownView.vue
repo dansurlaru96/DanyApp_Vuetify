@@ -1,5 +1,5 @@
 <template lang="">
-  <v-parallax src="../assets/parallax-header.jp g" height="300">
+  <v-parallax src="../assets/parallax-header.jpg" height="300">
     <div class="text-center text-white ma-15">
       <h1 class="text-h3">Listen & Download</h1>
       <p class="text-h5">
