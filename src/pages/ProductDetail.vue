@@ -1,36 +1,33 @@
 <template>
   <div class="ma-5">
-    <h1 class="text-center">{{ title }}</h1>
+    <h1 class="pa-5 text-center">{{ title }}</h1>
 
     <div class="d-flex flex-wrap justify-space-between ma-4">
       <div>
-        <img height="400" aspect-ratio="1/1" :src="image" alt="product" />
+        <img height="400" aspect-ratio="4/3" :src="image" alt="product" />
       </div>
 
-      <div width="500" class="flex-column align-self-center justify-center">
-        <h3 class="text-h6 text-deep-purple-lighten-1 text right">
+      <div width="500" class="flex-column align-self-center">
+        <h3 class="text-h6 text-deep-purple-lighten-1 text-right">
           #produs ID {{ $route.params.id }}
         </h3>
-        <v-rating
-          height="50"
-          v-model="rating"
-          dense
-          hover
-          half-increments
-          color="orange"
-          :value="rating.rate.count"
-          ><div v-if="rating.rate !== null && rating.count !== null">
-            <p>Rating: {{ rating.rate }}</p>
-            <p>Count: {{ rating.count }}</p>
-          </div></v-rating
-        >
-
-        <h2 class="text-h3 font-weight-bold">{{ price }} EUR</h2>
-        <div class="d-flex flex-column pa-3 ga-5">
-          <v-btn color="purple" size="x-large" elevation="4" @click="addToCart">
-            <v-icon>mdi-cart-plus</v-icon> Adauga in cos
-          </v-btn>
+        <div class="text-center">
+          <v-rating
+            v-model="rating.rate"
+            density="comfortable"
+            readonly
+            color="amber-darken-2"
+            class="pa-2"
+            half-increments
+          ></v-rating>
+          <pre class="">{{ rating.rate }}</pre>
         </div>
+
+        <h1 class="pa-6 text-h3 font-weight-bold">{{ price }} EUR</h1>
+
+        <v-btn color="purple" size="x-large" @click="addToCart">
+          <v-icon>mdi-cart-plus</v-icon> Adaugǎ în coş
+        </v-btn>
       </div>
     </div>
 
@@ -44,9 +41,7 @@ import api from "../api/api";
 export default {
   name: "ProductDetail",
 
-  methods: {
-    addToCart() {},
-  },
+  methods: {},
 
   async created() {
     this.product.value = await api.getProduct(this.$route.params.id);
@@ -62,9 +57,8 @@ export default {
       this.description = this.productData.description;
       this.price = this.productData.price;
       this.image = this.productData.image;
-      this.rating = this.productData.rating;
-      this.rate = this.productData.rate;
-      this.count = this.productData.count;
+      this.rating.rate = this.productData.rating.rate;
+      this.rating.count = this.productData.rating.count;
       this.category = this.productData.category;
     } catch (error) {
       console.error("A aparut o eroare: ", error);
@@ -87,10 +81,6 @@ export default {
       product: ref({}),
     };
   },
-  nameRules: [
-    (v) => !!v || "Câmp obligatoriu",
-    (v) => v.length <= 15 || "Numele să conțină maxim 15 caractere",
-  ],
 };
 </script>
 

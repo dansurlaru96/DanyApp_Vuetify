@@ -3,11 +3,8 @@
     <v-container>
       <v-card
         variant="tonal"
-        class="d-flex flex-wrap justify-center justify-space-around align-center ga-4"
+        class="d-flex flex-wrap justify-center justify-space-evenly align-center ga-2"
       >
-        <v-card-title>
-          <h3>Produse;</h3>
-        </v-card-title>
         <v-card-item>
           <v-text-field
             class="pt-6"
@@ -159,6 +156,10 @@ select {
 select:hover {
   background-color: purple;
   color: white;
+  transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
 }
 select:focus {
   outline: none;
@@ -170,5 +171,9 @@ select option {
 select option:hover {
   background-color: purple;
   color: white;
+  transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
 }
 </style>
