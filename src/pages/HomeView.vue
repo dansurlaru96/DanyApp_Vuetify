@@ -1,7 +1,7 @@
 <template lang="">
   <div>
     <v-parallax
-      src="@/assets/bg_parallax.jpg"
+      src="../assets/bg_parllax.jpg"
       height="690"
       jumbotron
       class="text-white"
@@ -21,11 +21,11 @@
             style="
               background: linear-gradient(
                 to right,
-                #00a9ff,
-                #89cff3,
-                #a0e9ff,
-                #cdf5fd,
-                #f0f9ff
+                #4535c1,
+                #478ccf,
+                #36c2ce,
+                #77e4c8,
+                #b9f2c7
               );
               -webkit-text-fill-color: transparent;
               -webkit-background-clip: text;
@@ -42,18 +42,63 @@
             MUSICIAN - FRONT-END WEB DEVELOPER
           </h2>
         </div>
-        <div class="d-flex flex-wrap justify-center ga-2 ma-4">
-          <v-chip size="large" variant="elevated" color="#e14f1c" prepend-icon="mdi-language-html5"> HTML </v-chip>
-          <v-chip size="large" variant="elevated" color="#2d52e5" prepend-icon="mdi-language-css3"> CSS </v-chip>
-          <v-chip size="large" variant="elevated" color="#F7E025" prepend-icon="mdi-language-javascript">
+        <div class="d-flex flex-wrap justify-center ga-2 ma-4 opacity-100">
+          <v-chip
+            size="large"
+            color="#e14f1c"
+            variant="elevated"
+            prepend-icon="mdi-language-html5"
+          >
+            HTML
+          </v-chip>
+          <v-chip
+            size="large"
+            color="#2d52e5"
+            variant="elevated"
+            prepend-icon="mdi-language-css3"
+          >
+            CSS
+          </v-chip>
+          <v-chip
+            size="large"
+            color="#F7E025"
+            prepend-icon="mdi-language-javascript"
+            variant="elevated"
+          >
             JavaScript
           </v-chip>
-          <v-chip size="large" variant="elevated" color="rgb(71,186,135)" prepend-icon="mdi-vuejs"> Vue </v-chip>
-          <v-chip size="large" variant="elevated" color="rgb(55,124,200)" prepend-icon="mdi-language-typescript">
+          <v-chip
+            size="large"
+            color="rgb(71,186,135)"
+            variant="elevated"
+            prepend-icon="mdi-vuejs"
+          >
+            Vue
+          </v-chip>
+          <v-chip
+            size="large"
+            color="rgb(55,124,200)"
+            prepend-icon="mdi-language-typescript"
+            variant="elevated"
+          >
             TypeScript
           </v-chip>
-          <v-chip size="large" variant="elevated" color="rgb(72,170,178)" prepend-icon="mdi-tailwind"> Tailwind </v-chip>
-          <v-chip size="large" variant="elevated" color="rgb(140,25,252)" prepend-icon="mdi-bootstrap"> Bootstrap </v-chip>
+          <v-chip
+            size="large"
+            color="rgb(72,170,178)"
+            prepend-icon="mdi-tailwind"
+            variant="elevated"
+          >
+            Tailwind
+          </v-chip>
+          <v-chip
+            size="large"
+            color="rgb(140,25,252)"
+            variant="elevated"
+            prepend-icon="mdi-bootstrap"
+          >
+            Bootstrap
+          </v-chip>
         </div>
       </div>
     </v-parallax>
