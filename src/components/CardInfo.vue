@@ -21,7 +21,7 @@
 import { defineComponent } from "vue";
 export default defineComponent({
   name: "CardInfo",
-  props: {
+  defineProps: {
     image: String,
     subject: String,
     text: String,
