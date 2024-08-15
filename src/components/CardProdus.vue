@@ -9,14 +9,8 @@
         {{ price }} {{ currency }} EUR
       </v-card-text>
       <v-card-actions class="ma-2 pa-2 ga-4">
-        <v-btn
-          width="auto"
-          color="purple"
-          variant="flat"
-          text=""
-          @click="addToCart"
-        >
-          <v-icon> mdi-cart-plus </v-icon> În coș
+        <v-btn width="auto" color="purple" variant="flat" @click="addToCart">
+          <v-icon>mdi-cart-plus</v-icon>În coș
         </v-btn>
 
         <v-btn
@@ -34,6 +28,7 @@
 
 <script>
 import { defineComponent } from "vue";
+import { useCartStore } from "@/stores/cartStore";
 
 export default defineComponent({
   name: "CardProdus",
@@ -55,6 +50,15 @@ export default defineComponent({
         params: {
           id: this.id,
         },
+      });
+    },
+    addToCart() {
+      useCartStore().addToCart({
+        id: this.id,
+        image: this.image,
+        title: this.title,
+        price: this.price,
+        currency: this.currency,
       });
     },
   },

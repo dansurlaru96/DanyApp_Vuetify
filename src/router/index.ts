@@ -5,6 +5,7 @@ import StoreView from "@/pages/StoreView.vue";
 import ListenDownView from "@/pages/ListenDownView.vue";
 import StudioView from "@/pages/StudioView.vue";
 import ProductDetail from "@/pages/ProductDetail.vue";
+import CartView from "@/pages/CartView.vue";
 
 const routes = [
   {
@@ -40,6 +41,11 @@ const routes = [
     path: "/product-detail/:id",
     name: "ProductDetail",
     component: ProductDetail,
+  },
+  {
+    path: "/cart",
+    component: CartView,
+    name: "Cart",
   },
 ];
 

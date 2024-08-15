@@ -11,11 +11,14 @@ import { registerPlugins } from "@/plugins";
 import App from "./App.vue";
 import router from "./router";
 
+// Pinia
+import { createPinia } from "pinia";
 // Composables
 import { createApp } from "vue";
 
-const app = createApp(App);
+const pinia = createPinia();
 
+const app = createApp(App);
 registerPlugins(app);
 
-app.use(router).mount("#app");
+app.use(router).use(pinia).mount("#app");

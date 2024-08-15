@@ -40,14 +40,29 @@
             color="purple"
             size="large"
             rounded="lg"
+            flat
             prepend-icon="mdi-reload"
             >Resetare opțiuni</v-btn
           >
         </v-card-item>
         <v-card-item>
-          <v-btn append-icon="mdi-cart" color="purple" size="large" rounded="lg"
-            >Cos</v-btn
-          >
+          <template v-slot:append>
+            <v-btn
+              @click="$router.push({ name: 'CartView' })"
+              color="purple"
+              size="large"
+              rounded="lg"
+              flat
+              prepend-icon="mdi-cart"
+              to="/cart"
+              >Coș<v-badge
+                color="error"
+                :content="cartItemCount"
+                overlap
+                inline
+              ></v-badge
+            ></v-btn>
+          </template>
         </v-card-item>
       </v-card>
     </v-container>
@@ -73,6 +88,7 @@
 import { defineComponent } from "vue";
 import axios from "axios";
 import CardProdus from "../components/CardProdus.vue";
+import { useCartStore } from "@/stores/cartStore";
 
 export default defineComponent({
   name: "StoreView",
@@ -91,8 +107,6 @@ export default defineComponent({
       products: [],
     };
   },
-
-  computed: {},
 
   methods: {
     searchProduct(event) {
@@ -131,6 +145,17 @@ export default defineComponent({
         this.products = response.data;
       });
     },
+    addProductToCart() {
+      this.$emit("addedToCart", this.id);
+      let cartStore = useCartStore();
+
+      cartStore.addToCart({
+        id: this.id,
+        image: this.image,
+        name: this.name,
+        price: this.price,
+      });
+    },
   },
 
   mounted() {
@@ -138,6 +163,17 @@ export default defineComponent({
       this.products = response.data;
       console.log(this.products);
     });
+  },
+  created() {
+    let cartStore = useCartStore();
+    cartStore.loadCart();
+  },
+
+  computed: {
+    cartItemCount() {
+      const cartStore = useCartStore();
+      return cartStore.cartItemCount;
+    },
   },
 });
 </script>
