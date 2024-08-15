@@ -43,7 +43,25 @@
 
               <td>{{ item.title }}</td>
               <td>{{ item.price }} EUR</td>
-              <td>{{ item.quantity }}</td>
+
+              <td>
+                <v-btn
+                  icon
+                  variant="text"
+                  @click="decreaseQuantity(item.id)"
+                  color="error"
+                  >-</v-btn
+                >
+                {{ item.quantity }}
+                <v-btn
+                  icon
+                  variant="text"
+                  @click="increaseQuantity(item)"
+                  color="success"
+                  >+</v-btn
+                >
+              </td>
+
               <td>
                 <v-btn
                   icon="mdi-trash-can"
@@ -73,7 +91,7 @@
     </template>
 
     <template v-slot:item.2>
-      <v-card title="Step Two" flat>...</v-card>
+      <v-card title="Adresa de livrare" flat> </v-card>
     </template>
 
     <template v-slot:item.3>
@@ -110,6 +128,20 @@ export default {
     clearCart() {
       const cartStore = useCartStore();
       cartStore.clearCart();
+      this.cart = cartStore.cart;
+      this.cartItemCount = cartStore.cartItemCount;
+      this.cartTotalPrice = cartStore.cartTotalPrice;
+    },
+    increaseQuantity(item) {
+      const cartStore = useCartStore();
+      cartStore.increaseQuantity(item.id);
+      this.cart = cartStore.cart;
+      this.cartItemCount = cartStore.cartItemCount;
+      this.cartTotalPrice = cartStore.cartTotalPrice;
+    },
+    decreaseQuantity(id) {
+      const cartStore = useCartStore();
+      cartStore.decreaseQuantity(id);
       this.cart = cartStore.cart;
       this.cartItemCount = cartStore.cartItemCount;
       this.cartTotalPrice = cartStore.cartTotalPrice;

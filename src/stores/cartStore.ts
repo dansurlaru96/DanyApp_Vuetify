@@ -46,6 +46,29 @@ export const useCartStore = defineStore("cart", {
       }
       this.saveCart();
     },
+    increaseQuantity(productId: number) {
+      const produsExista = this.cart.find(
+        (item: CartItem) => item.id === productId
+      );
+
+      if (produsExista) {
+        produsExista.quantity += 1;
+      }
+      this.saveCart();
+    },
+    decreaseQuantity(productId: number) {
+      const produsExista = this.cart.find(
+        (item: CartItem) => item.id === productId
+      );
+
+      if (produsExista) {
+        produsExista.quantity -= 1;
+        if (produsExista.quantity === 0) {
+          this.removeFromCart(productId);
+        }
+      }
+      this.saveCart();
+    },
     removeFromCart(productId: number) {
       this.cart = this.cart.filter((item: CartItem) => item.id !== productId);
       this.saveCart();
