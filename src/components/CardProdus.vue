@@ -9,9 +9,34 @@
         {{ price }} {{ currency }} EUR
       </v-card-text>
       <v-card-actions class="ma-2 pa-2 ga-4">
-        <v-btn width="auto" color="purple" variant="flat" @click="addToCart">
+        <v-btn
+          width="auto"
+          color="purple"
+          variant="flat"
+          @click="
+            snackbar = true;
+            addToCart();
+          "
+        >
           <v-icon>mdi-cart-plus</v-icon>În coș
         </v-btn>
+
+        <v-snackbar
+          v-model="snackbar"
+          color="black"
+          timeout="4000"
+          multi-line
+          rounded="pill"
+          variant="elevated"
+        >
+          {{ text }}
+
+          <template v-slot:actions>
+            <v-btn color="blue" variant="text" @click="snackbar = false">
+              Închide
+            </v-btn>
+          </template>
+        </v-snackbar>
 
         <v-btn
           width="auto"
@@ -43,6 +68,12 @@ export default defineComponent({
     rate: Number,
     count: Number,
   },
+
+  data: () => ({
+    snackbar: false,
+    text: "Produsul a fost adăugat în coș",
+  }),
+
   methods: {
     goToProductDetail() {
       this.$router.push({
