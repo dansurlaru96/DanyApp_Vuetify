@@ -75,20 +75,28 @@
         :id="product.id"
         :image="product.image"
         :title="product.title"
-        :description="product.description"
         :price="product.price"
-        :currency="product.currency"
-        :rate="product.rating.rate"
-        :count="product.rating.count"
       ></CardProdus>
     </div>
   </v-app>
 </template>
 <script>
 import { defineComponent } from "vue";
-import axios from "axios";
 import CardProdus from "../components/CardProdus.vue";
 import { useCartStore } from "@/stores/cartStore";
+import { supabase } from "@/lib/supabaseClient";
+
+const getProducts = async () => {
+  try {
+    const { data, error } = await supabase.from("products").select("*");
+    if (error) {
+      throw error;
+    }
+    return data;
+  } catch (error) {
+    console.error("Error fetching products", error);
+  }
+};
 
 export default defineComponent({
   name: "StoreView",
@@ -110,18 +118,15 @@ export default defineComponent({
 
   methods: {
     searchProduct(event) {
-      let target = event.target;
-      let searchTerm = target.value.toLowerCase();
-      if (searchTerm === "") {
-        axios.get("https://fakestoreapi.com/products").then((response) => {
+      supabase
+        .from("products")
+        .select("*")
+        .ilike("title", `%${event.target.value}%`)
+        .then((response) => {
           this.products = response.data;
         });
-      } else {
-        this.products = this.products.filter((product) =>
-          product.title.toLowerCase().includes(searchTerm.toLowerCase())
-        );
-      }
     },
+
     sortProduct(option) {
       if (option === "Preț: crescător") {
         this.products.sort((a, b) => a.price - b.price);
@@ -133,18 +138,26 @@ export default defineComponent({
         this.products.sort((a, b) => b.title.localeCompare(a.title));
       }
     },
+
     filterOption(option) {
-      axios
-        .get(`https://fakestoreapi.com/products/category/${option}`)
+      supabase
+        .from("products")
+        .select("*")
+        .eq("category", option)
         .then((response) => {
           this.products = response.data;
         });
     },
+
     resetSortFilter() {
-      axios.get("https://fakestoreapi.com/products").then((response) => {
-        this.products = response.data;
-      });
+      supabase
+        .from("products")
+        .select("*")
+        .then((response) => {
+          this.products = response.data;
+        });
     },
+
     addProductToCart() {
       this.$emit("addedToCart", this.id);
       let cartStore = useCartStore();
@@ -158,12 +171,6 @@ export default defineComponent({
     },
   },
 
-  mounted() {
-    axios.get("https://fakestoreapi.com/products").then((response) => {
-      this.products = response.data;
-      console.log(this.products);
-    });
-  },
   created() {
     let cartStore = useCartStore();
     cartStore.loadCart();
@@ -174,6 +181,10 @@ export default defineComponent({
       const cartStore = useCartStore();
       return cartStore.cartItemCount;
     },
+  },
+
+  async mounted() {
+    this.products = await getProducts();
   },
 });
 </script>

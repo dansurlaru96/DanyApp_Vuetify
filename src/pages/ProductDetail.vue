@@ -13,14 +13,14 @@
         </h3>
         <div class="text-center">
           <v-rating
-            v-model="rating.rate"
+            v-model="rating__rate"
             density="comfortable"
             readonly
             color="amber-darken-2"
             class="pa-2"
             half-increments
           ></v-rating>
-          <pre class="">{{ rating.rate }}</pre>
+          <pre>{{ rating__rate }}</pre>
         </div>
 
         <h1 class="pa-6 text-h3 font-weight-bold">{{ price }} EUR</h1>
@@ -36,49 +36,43 @@
 </template>
 
 <script>
-import { ref } from "vue";
-import api from "../api/api";
+import { supabase } from "@/lib/supabaseClient";
+
 export default {
   name: "ProductDetail",
 
   methods: {},
 
   async created() {
-    this.product.value = await api.getProduct(this.$route.params.id);
-
-    try {
-      const response = await api.getProduct(this.idProdus);
-      this.productData =
-        response.data[
-          response.data.findIndex((product) => product.id == this.idProdus)
-        ];
-
-      this.title = this.productData.title;
-      this.description = this.productData.description;
-      this.price = this.productData.price;
-      this.image = this.productData.image;
-      this.rating.rate = this.productData.rating.rate;
-      this.rating.count = this.productData.rating.count;
-      this.category = this.productData.category;
-    } catch (error) {
-      console.error("A aparut o eroare: ", error);
+    const { data, error } = await supabase
+      .from("products")
+      .select("*")
+      .eq("id", this.idProdus)
+      .single();
+    if (error) {
+      console.error("Error fetching product", error);
+    } else {
+      this.productData = data;
+      this.title = data.title;
+      this.description = data.description;
+      this.price = data.price;
+      this.image = data.image;
+      this.rating__rate = data.rating__rate;
+      this.rating__count = data.rating__count;
     }
-    console.log(this.productData);
   },
   data() {
     return {
-      showAllProducts: false,
       idProdus: this.$route.params.id,
       productData: {},
-      name: null,
-      description: null,
-      price: null,
-      image: null,
+      title: "",
+      description: "",
+      price: 0,
+      image: "",
       rating: {
-        rate: null,
-        count: null,
+        rate: 0,
+        count: 0,
       },
-      product: ref({}),
     };
   },
 };
