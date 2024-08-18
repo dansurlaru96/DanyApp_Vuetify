@@ -3,8 +3,6 @@
   <v-stepper
     alt-labels
     editable
-    prev-step-text="Înapoi"
-    next-step-text="Înainte"
     elevation="5"
     mobile-breakpoint="680"
     :items="['Coşul cu produse', 'Adresa de livrare & metoda de platǎ']"
@@ -149,7 +147,6 @@
             <v-radio-group
               required
               label="Alege o opțiune"
-              v-model="valid"
               ref="form"
               lazy-validation
               :rules="rules"
@@ -199,7 +196,6 @@
             <v-radio-group
               required
               label="Alege o opțiune"
-              v-model="valid"
               ref="form"
               lazy-validation
               :rules="rules"
@@ -231,7 +227,6 @@
       <v-checkbox
         required
         label="Sunt de acord cu termenii și condițiile"
-        v-model="valid"
         ref="form"
         lazy-validation
         :rules="rules"

@@ -25,9 +25,35 @@
 
         <h1 class="pa-6 text-h3 font-weight-bold">{{ price }} EUR</h1>
 
-        <v-btn color="purple" size="x-large" @click="addToCart">
-          <v-icon>mdi-cart-plus</v-icon> Adaugǎ în coş
-        </v-btn>
+        <!-- <v-btn
+          width="auto"
+          color="purple"
+          variant="flat"
+          size="x-large"
+          @click="
+            snackbar = true;
+            addToCart();
+          "
+        >
+          <v-icon>mdi-cart-plus</v-icon>În coș
+        </v-btn> -->
+
+        <v-snackbar
+          v-model="snackbar"
+          color="black"
+          timeout="4000"
+          multi-line
+          rounded="pill"
+          variant="elevated"
+        >
+          {{ text }}
+
+          <template v-slot:actions>
+            <v-btn color="blue" variant="text" @click="snackbar = false">
+              Închide
+            </v-btn>
+          </template>
+        </v-snackbar>
       </div>
     </div>
 
@@ -37,11 +63,39 @@
 
 <script>
 import { supabase } from "@/lib/supabaseClient";
-
+import { useCartStore } from "@/stores/cartStore";
 export default {
   name: "ProductDetail",
 
-  methods: {},
+  methods: {
+    addProductToCart() {
+      this.$emit("addedToCart", this.id);
+      let cartStore = useCartStore();
+
+      cartStore.addToCart({
+        id: this.id,
+        image: this.image,
+        name: this.name,
+        price: this.price,
+      });
+    },
+
+    created() {
+      let cartStore = useCartStore();
+      this.cartItemCount = cartStore.cartItemCount;
+    },
+
+    computed: {
+      cartItemCount() {
+        let cartStore = useCartStore();
+        return cartStore.cartItemCount;
+      },
+    },
+
+    addToCart() {
+      this.addProductToCart();
+    },
+  },
 
   async created() {
     const { data, error } = await supabase
@@ -54,9 +108,9 @@ export default {
     } else {
       this.productData = data;
       this.title = data.title;
-      this.description = data.description;
-      this.price = data.price;
       this.image = data.image;
+      this.price = data.price;
+      this.description = data.description;
       this.rating__rate = data.rating__rate;
       this.rating__count = data.rating__count;
     }
@@ -67,12 +121,14 @@ export default {
       productData: {},
       title: "",
       description: "",
-      price: 0,
       image: "",
+      price: "",
       rating: {
         rate: 0,
         count: 0,
       },
+      snackbar: false,
+      text: "Produsul a fost adăugat în coș",
     };
   },
 };
