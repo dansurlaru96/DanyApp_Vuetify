@@ -61,16 +61,19 @@
             <v-card-text>
               <v-form>
                 <v-text-field
+                  :rules="[rules.required]"
                   label="Nume"
                   v-model="name"
                   required
                 ></v-text-field>
                 <v-text-field
+                  :rules="[rules.required]"
                   label="E-mail"
                   v-model="email"
                   required
                 ></v-text-field>
                 <v-textarea
+                  :rules="[rules.required]"
                   label="Mesajul tǎu"
                   v-model="message"
                   required
@@ -78,6 +81,7 @@
 
                 <v-btn
                   @click="sendForm"
+                  v-if="name && email && message"
                   append-icon="mdi-arrow-right"
                   size="x-large"
                   color="deep-orange"
@@ -107,6 +111,9 @@ import { supabase } from "@/lib/supabaseClient";
 export default {
   data() {
     return {
+      rules: {
+        required: (value) => !!value || "Câmpul este obligatoriu.",
+      },
       name: "",
       email: "",
       message: "",
