@@ -35,9 +35,8 @@
             >
 
             <v-divider
-              class="mx-2"
+              class="mx-2 opacity-100"
               light
-              opacity="75"
               inset
               vertical
             ></v-divider>
@@ -124,6 +123,10 @@
 <script>
 import { defineComponent } from "vue";
 import SocialBtn from "./SocialBtn.vue";
+import { ref } from "vue";
+
+const model = ref(true);
+
 export default defineComponent({
   name: "Navbar",
   components: {
@@ -132,6 +135,7 @@ export default defineComponent({
   data: () => ({
     drawer: false,
     group: null,
+    model: false,
 
     items: [
       { title: "Acasă", link: "/home" },
@@ -144,37 +148,3 @@ export default defineComponent({
 });
 </script>
 <style lang=""></style>
-
-<!-- <v-layout>
-      <v-app-bar
-        color="primary"
-        density="compact"
-      >
-        <template v-slot:prepend>
-          <v-app-bar-nav-icon></v-app-bar-nav-icon>
-        </template>
-
-        <v-app-bar-title>Photos</v-app-bar-title>
-
-        <template v-slot:append>
-          <v-btn icon="mdi-dots-vertical"></v-btn>
-        </template>
-      </v-app-bar>
-
-      <v-main>
-        <v-container fluid>
-          <v-row dense>
-            <v-col
-              v-for="n in 8"
-              :key="n"
-              cols="3"
-            >
-              <v-sheet
-                color="surface-variant-alt"
-                height="96"
-              ></v-sheet>
-            </v-col>
-          </v-row>
-        </v-container>
-      </v-main>
-    </v-layout> -->
