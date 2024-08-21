@@ -12,7 +12,7 @@
             width="230"
             aspect-ratio="1/1"
             class="rounded-circle elevation-23 align-center mb-4"
-            src="../assets/avatar_hero.jpg"
+            src="../../public/assets/avatar_hero.jpg"
           ></v-img>
         </div>
         <div>
