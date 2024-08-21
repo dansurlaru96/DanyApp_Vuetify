@@ -60,10 +60,30 @@
             <v-card-title class="headline">Formular de contact</v-card-title>
             <v-card-text>
               <v-form>
-                <v-text-field label="Nume" required></v-text-field>
-                <v-text-field label="E-mail" required></v-text-field>
-                <v-textarea label="Mesajul tǎu" required></v-textarea>
-                <v-btn color="deep-orange">Trimite</v-btn>
+                <v-text-field
+                  label="Nume"
+                  v-model="name"
+                  required
+                ></v-text-field>
+                <v-text-field
+                  label="E-mail"
+                  v-model="email"
+                  required
+                ></v-text-field>
+                <v-textarea
+                  label="Mesajul tǎu"
+                  v-model="message"
+                  required
+                ></v-textarea>
+
+                <v-btn
+                  @click="sendForm"
+                  append-icon="mdi-arrow-right"
+                  size="x-large"
+                  color="deep-orange"
+                  rounded
+                  >Trimite</v-btn
+                >
               </v-form>
             </v-card-text>
           </v-card>
@@ -82,6 +102,44 @@
   ></iframe>
 </template>
 <script>
-export default {};
+import { supabase } from "@/lib/supabaseClient";
+
+export default {
+  data() {
+    return {
+      name: "",
+      email: "",
+      message: "",
+    };
+  },
+  methods: {
+    async sendForm() {
+      try {
+        const { data, error } = await supabase.from("ContactForm").insert([
+          {
+            name: this.name,
+            email: this.email,
+            message: this.message,
+          },
+        ]);
+
+        if (error) {
+          console.error(error);
+          return;
+        }
+
+        console.log("Form data inserted successfully:", data);
+        alert("Mesajul tǎu a fost trimis cu succes!");
+
+        // Reset form fields
+        this.name = "";
+        this.email = "";
+        this.message = "";
+      } catch (error) {
+        console.error(error);
+      }
+    },
+  },
+};
 </script>
 <style lang=""></style>
