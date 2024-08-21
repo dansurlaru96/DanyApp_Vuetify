@@ -15,7 +15,6 @@ declare module 'vue' {
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     ScrollToTop: typeof import('./src/components/scrollToTop.vue')['default']
-    SnackBarMsg: typeof import('./src/components/SnackBarMsg.vue')['default']
     SocialBtn: typeof import('./src/components/SocialBtn.vue')['default']
   }
 }
