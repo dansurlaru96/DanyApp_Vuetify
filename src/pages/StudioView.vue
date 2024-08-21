@@ -1,7 +1,7 @@
 <template lang="">
   <v-parallax
     height="300"
-    src="../assets/mixer_parallax-page.jpg"
+    src="../../public/assets/mixer_parallax-page.jpg"
     class="low-contrast-image"
   >
     <div class="text-center text-white ma-15">
@@ -61,7 +61,7 @@
     </h2>
 
     <v-img
-      src="../assets/homestudio1.jpg"
+      src="../../public/assets/homestudio1.jpg"
       class="mx-auto"
       max-width="800"
     ></v-img>
@@ -122,7 +122,7 @@
         </v-expansion-panel>
         <v-expansion-panel
           title="Pasul 7 Mixarea chitarei bass cu bateria"
-          text="Mixarea chitarei bass cu bateria. Seteaza sa auzi doar subgrupul de baterie si canalul chitara bass, fara voci. Din nou, poti folosi ceva compresie sau/si egalizare, insa e bine sa folosesti doar daca este nevoie. Daca suna bine, lasa-le asa. Nu aplica efecte daca nu este necesar. 
+          text="Mixarea chitarei bass cu bateria. Seteaza sa auzi doar subgrupul de baterie si canalul chitara bass, fara voci. Din nou, poti folosi ceva compresie sau/si egalizare, insa e bine sa folosesti doar daca este nevoie. Daca suna bine, lasa-le asa. Nu aplica efecte daca nu este necesar.
         Eu am dublat canalul de bass si pe cel dublat am aplicat o compresie dinamica mare, si usoare distorsiuni, pentru a-l face mai prezent, iar cele doua canale le-am mixat intre ele ca nivel, unul in functie de celalalt (sub -20 dB fiecare), dar si impreuna sa nu depaseasca -15 dB, eventual usor, pe alocuri.
 
           Astfel setata chitara bass, am mixat-o cu grupul de percutie. Cand suna bine, da drumul si la subgrupul de voci sa il auzi, si verifica ca cele trei elemente (percutie, bass si voci) sa sune bine si uniform impreuna. Fa ajustarile necesare daca e cazul, si asculta din nou.

@@ -1,5 +1,5 @@
 <template lang="">
-  <v-parallax src="../assets/cover-contact.jpg" height="200">
+  <v-parallax src="../../public/assets/cover-contact.jpg" height="200">
     <div class="text-center text-white ma-15">
       <h1 class="text-h3">Contact</h1>
     </div>

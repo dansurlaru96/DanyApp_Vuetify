@@ -1,7 +1,7 @@
 <template lang="">
   <div>
     <v-parallax
-      src="../assets/bg_parllax.jpg"
+      src="../../public/assets/bg_parllax.jpg"
       height="690"
       jumbotron
       class="text-white"
@@ -111,31 +111,31 @@
         class="d-flex flex-wrap justify-space-evenly justify-center align-center align-self-center ma-4"
       >
         <CardInfo
-          image="../../src/assets/inspiration.jpg"
+          image="../../public/assets/inspiration.jpg"
           subject="Inspirație"
           text="Totul începe cu o idee sau o emoție pe care vrei să o exprimi. Inspirația poate veni din experiențe personale, natură, alte melodii sau chiar dintr-o simplă frază."
         ></CardInfo>
 
         <CardInfo
-          image="../../src/assets/composing.webp"
+          image="../../public/assets/composing.webp"
           subject="Compoziția"
           text="Aici începi să pui ideile pe hârtie sau într-un software de producție muzicală. Alegi acordurile, melodia principală și structura piesei (versuri, refren, punte etc.)."
         ></CardInfo>
 
         <CardInfo
-          image="../../src/assets/arranging.jpg"
+          image="../../public/assets/arranging.jpg"
           subject="Aranjamentul"
           text="După ce ai melodia de bază, începi să adaugi alte elemente, cum ar fi armonii, ritmuri și instrumente suplimentare. Acest pas ajută la crearea unei texturi mai bogate și mai complexe."
         ></CardInfo>
 
         <CardInfo
-          image="../../src/assets/recording.jpg"
+          image="../../public/assets/recording.jpg"
           subject="Înregistrarea"
           text="Odată ce aranjamentul este finalizat, începi să înregistrezi fiecare parte a melodiei. Acest lucru poate implica înregistrarea vocalelor, instrumentelor și a altor sunete."
         ></CardInfo>
 
         <CardInfo
-          image="../../src/assets/mix-master.webp"
+          image="../../public/assets/mix-master.webp"
           subject="Mixajul"
           text="După înregistrare, piesa trece prin procesul de mixaj, unde toate elementele sunt echilibrate și ajustate pentru a suna bine împreună. Masterizarea este etapa finală, unde piesa este pregătită pentru distribuție, asigurându-se că sună bine pe toate dispozitivele și platformele."
         ></CardInfo>

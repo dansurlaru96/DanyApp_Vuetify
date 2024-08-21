@@ -1,5 +1,5 @@
 <template lang="">
-  <v-parallax src="../assets/parallax-header.jpg" height="300">
+  <v-parallax src="../../public/assets/parallax-header.jpg" height="300">
     <div class="text-center text-white ma-15">
       <h1 class="text-h3">Listen & Download</h1>
       <p class="text-h5">
@@ -26,7 +26,10 @@
           <v-row class="justify-center justify-content-center">
             <v-col cols="40" md="6">
               <v-card class="pa-4">
-                <v-img src="../assets/cover_album.jpg" height="500"></v-img>
+                <v-img
+                  src="../../public/assets/cover_album.jpg"
+                  height="500"
+                ></v-img>
                 <v-card-actions class="justify-center justify-content-center">
                   <v-btn
                     prepend-icon="mdi-arrow-down-bold-circle"
