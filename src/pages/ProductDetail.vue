@@ -46,7 +46,7 @@
 
 <script>
 import { supabase } from "@/lib/supabaseClient";
-import { useCartStore } from "@/stores/cartStore";
+
 export default {
   name: "ProductDetail",
   data() {
@@ -56,7 +56,6 @@ export default {
       price: 0,
       image: "",
       rating__rate: 0,
-      snackbar: false,
     };
   },
   methods: {
@@ -66,6 +65,7 @@ export default {
         .select()
         .eq("id", this.$route.params.id)
         .single();
+
       if (error) {
         console.error(error);
       } else {
@@ -73,21 +73,12 @@ export default {
         this.description = data.description;
         this.price = data.price;
         this.image = data.image;
-        this.rating__rate = data.rating;
+        this.rating__rate = data.rating__rate;
       }
     },
-    async addToCart() {
-      const { data, error } = await supabase
-        .from("products")
-        .select()
-        .eq("id", this.$route.params.id)
-        .single();
-      if (error) {
-        console.error(error);
-      } else {
-        useCartStore().addProduct(data);
-      }
-    },
+  },
+  mounted() {
+    this.getProduct(this.$route.params.id);
   },
 };
 </script>
