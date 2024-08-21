@@ -37,23 +37,6 @@
         >
           <v-icon>mdi-cart-plus</v-icon>În coș
         </v-btn> -->
-
-        <v-snackbar
-          v-model="snackbar"
-          color="black"
-          timeout="4000"
-          multi-line
-          rounded="pill"
-          variant="elevated"
-        >
-          {{ text }}
-
-          <template v-slot:actions>
-            <v-btn color="blue" variant="text" @click="snackbar = false">
-              Închide
-            </v-btn>
-          </template>
-        </v-snackbar>
       </div>
     </div>
 
@@ -66,74 +49,47 @@ import { supabase } from "@/lib/supabaseClient";
 import { useCartStore } from "@/stores/cartStore";
 export default {
   name: "ProductDetail",
-
-  methods: {
-    addProductToCart() {
-      this.$emit("addedToCart", this.id);
-      let cartStore = useCartStore();
-
-      cartStore.addToCart({
-        id: this.id,
-        image: this.image,
-        name: this.name,
-        price: this.price,
-      });
-    },
-
-    created() {
-      let cartStore = useCartStore();
-      this.cartItemCount = cartStore.cartItemCount;
-    },
-
-    computed: {
-      cartItemCount() {
-        let cartStore = useCartStore();
-        return cartStore.cartItemCount;
-      },
-    },
-
-    addToCart() {
-      this.addProductToCart();
-    },
-  },
-
-  async created() {
-    const { data, error } = await supabase
-      .from("products")
-      .select("*")
-      .eq("id", this.idProdus)
-      .single();
-    if (error) {
-      console.error("Error fetching product", error);
-    } else {
-      this.productData = data;
-      this.title = data.title;
-      this.image = data.image;
-      this.price = data.price;
-      this.description = data.description;
-      this.rating__rate = data.rating__rate;
-      this.rating__count = data.rating__count;
-    }
-  },
   data() {
     return {
-      idProdus: this.$route.params.id,
-      productData: {},
       title: "",
       description: "",
+      price: 0,
       image: "",
-      price: "",
-      rating: {
-        rate: 0,
-        count: 0,
-      },
+      rating__rate: 0,
       snackbar: false,
-      text: "Produsul a fost adăugat în coș",
     };
+  },
+  methods: {
+    async getProduct() {
+      const { data, error } = await supabase
+        .from("products")
+        .select()
+        .eq("id", this.$route.params.id)
+        .single();
+      if (error) {
+        console.error(error);
+      } else {
+        this.title = data.title;
+        this.description = data.description;
+        this.price = data.price;
+        this.image = data.image;
+        this.rating__rate = data.rating;
+      }
+    },
+    async addToCart() {
+      const { data, error } = await supabase
+        .from("products")
+        .select()
+        .eq("id", this.$route.params.id)
+        .single();
+      if (error) {
+        console.error(error);
+      } else {
+        useCartStore().addProduct(data);
+      }
+    },
   },
 };
 </script>
 
-<style scoped>
-/* Your styles */
-</style>
+<style></style>
