@@ -9,7 +9,7 @@
     >
       <v-img cover height="200" :src="image"></v-img>
       <v-card-item>
-        <v-card-title> {{ subject }} </v-card-title>
+        <v-card-title>{{ subject }}</v-card-title>
       </v-card-item>
       <v-card-text>
         {{ text }}
@@ -22,9 +22,21 @@ import { defineComponent } from "vue";
 export default defineComponent({
   name: "CardInfo",
   props: {
-    image: String,
-    subject: String,
-    text: String,
+    subject: {
+      type: String,
+      required: true,
+    },
+    image: {
+      type: String,
+      required: true,
+    },
+    text: {
+      type: String,
+      required: true,
+    },
+  },
+  mounted() {
+    console.log("Image URL:", this.image);
   },
 });
 </script>
