@@ -16,7 +16,7 @@ export default {
     return {
       items: [
         {
-          src: "../../../public/assets/carousel_img/img1.jpg",
+          src: "/assets/carousel_img/img1.jpg",
         },
         {
           src: "/assets/carousel_img/img2.jpg",
