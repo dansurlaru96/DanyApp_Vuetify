@@ -12,10 +12,19 @@
             label="Cautǎ produs"
             prepend-inner-icon="mdi-magnify"
             density="compact"
-            clearable
+            clearable="true"
             color="purple-accent-4"
             @input="searchProduct"
           ></v-text-field>
+        </v-card-item>
+        <v-card-item>
+          <select @change="filterOption($event.target.value)">
+            <option disabled selected>Alege categoria</option>
+            <option value="men's clothing">Îmbrăcăminte bărbați</option>
+            <option value="women's clothing">Îmbrăcăminte femei</option>
+            <option value="jewelery">Bijuterii</option>
+            <option value="electronics">Electronica</option>
+          </select>
         </v-card-item>
         <v-card-item>
           <select @change="sortProduct($event.target.value)">
@@ -25,15 +34,7 @@
             </option>
           </select>
         </v-card-item>
-        <v-card-item>
-          <select @change="filterOption($event.target.value)">
-            <option disabled selected>Filtreazǎ produsele</option>
-            <option value="men's clothing">Îmbrăcăminte bărbați</option>
-            <option value="women's clothing">Îmbrăcăminte femei</option>
-            <option value="jewelery">Bijuterii</option>
-            <option value="electronics">Electronica</option>
-          </select>
-        </v-card-item>
+
         <v-card-item>
           <v-btn
             @click="resetSortFilter"
@@ -56,12 +57,12 @@
               prepend-icon="mdi-cart"
               to="/cart"
               >Coș<v-badge
-                color="error"
+                color="white"
                 :content="cartItemCount"
                 overlap
                 inline
-              ></v-badge
-            ></v-btn>
+              ></v-badge>
+            </v-btn>
           </template>
         </v-card-item>
       </v-card>
@@ -155,6 +156,8 @@ export default defineComponent({
         .select("*")
         .then((response) => {
           this.products = response.data;
+          this.$forceUpdate();
+          this.$router.push({ name: "StoreView" });
         });
     },
 

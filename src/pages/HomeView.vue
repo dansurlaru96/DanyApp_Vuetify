@@ -1,7 +1,7 @@
 <template lang="">
   <div>
     <v-parallax
-      src="../../public/assets/bg_parllax.jpg"
+      src="/assets/bg_parllax.jpg"
       height="690"
       jumbotron
       class="text-white"
@@ -12,7 +12,7 @@
             width="230"
             aspect-ratio="1/1"
             class="rounded-circle elevation-23 align-center mb-4"
-            src="../../public/assets/avatar.jpg"
+            src="/assets/avatar.jpg"
           ></v-img>
         </div>
         <div>
