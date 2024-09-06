@@ -35,9 +35,6 @@ export default defineComponent({
       required: true,
     },
   },
-  mounted() {
-    console.log("Image URL:", this.image);
-  },
 });
 </script>
 <style lang=""></style>

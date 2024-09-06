@@ -19,22 +19,22 @@ export default {
           src: "../../../public/assets/carousel_img/img1.jpg",
         },
         {
-          src: "../../../public/assets/carousel_img/img2.jpg",
+          src: "/assets/carousel_img/img2.jpg",
         },
         {
-          src: "../../../public/assets/carousel_img/img3.jpg",
+          src: "/assets/carousel_img/img3.jpg",
         },
         {
-          src: "../../../public/assets/carousel_img/img4.jpg",
+          src: "/assets/carousel_img/img4.jpg",
         },
         {
-          src: "../../../public/assets/carousel_img/img5.jpg",
+          src: "/assets/carousel_img/img5.jpg",
         },
         {
-          src: "../../../public/assets/carousel_img/img6.jpg",
+          src: "/assets/carousel_img/img6.jpg",
         },
         {
-          src: "../../../public/assets/carousel_img/img7.jpg",
+          src: "/assets/carousel_img/img7.jpg",
         },
       ],
     };
