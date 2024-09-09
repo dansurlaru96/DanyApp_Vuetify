@@ -17,8 +17,9 @@
             @input="searchProduct"
           ></v-text-field>
         </v-card-item>
-        <v-card-item class="mx-auto">
+        <v-sheet>
           <v-chip-group
+            class="d-flex flex-wrap justify-center align-center align-self-center pa-3"
             filter
             column
             mandatory="force"
@@ -57,7 +58,7 @@
               >Electronice</v-chip
             >
           </v-chip-group>
-        </v-card-item>
+        </v-sheet>
         <v-card-item>
           <select v-model="selected" @change="sortProduct($event.target.value)">
             <option disabled selected>Sorteaza produsele</option>
