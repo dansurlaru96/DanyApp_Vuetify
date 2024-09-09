@@ -17,17 +17,49 @@
             @input="searchProduct"
           ></v-text-field>
         </v-card-item>
-        <v-card-item>
-          <select @change="filterOption($event.target.value)">
-            <option disabled selected>Alege categoria</option>
-            <option value="men's clothing">Îmbrăcăminte bărbați</option>
-            <option value="women's clothing">Îmbrăcăminte femei</option>
-            <option value="jewelery">Bijuterii</option>
-            <option value="electronics">Electronica</option>
-          </select>
+        <v-card-item class="mx-auto">
+          <v-chip-group
+            filter
+            column
+            mandatory="force"
+            variant="tonal"
+            mobile-breakpoint="680"
+            v-model="selected"
+          >
+            <v-chip
+              density="default"
+              color="deep-purple-darken-4"
+              @click="displayAllProducts"
+              >Toate produsele</v-chip
+            >
+            <v-chip
+              density="default"
+              color="deep-purple-darken-4"
+              @click="filterOption(`men's clothing`)"
+              >Îmbrăcăminte bărbați</v-chip
+            >
+            <v-chip
+              density="default"
+              color="deep-purple-darken-4"
+              @click="filterOption(`women's clothing`)"
+              >Îmbrăcăminte femei</v-chip
+            >
+            <v-chip
+              density="default"
+              color="deep-purple-darken-4"
+              @click="filterOption(`jewelery`)"
+              >Bijuterii</v-chip
+            >
+            <v-chip
+              density="default"
+              color="deep-purple-darken-4"
+              @click="filterOption(`electronics`)"
+              >Electronice</v-chip
+            >
+          </v-chip-group>
         </v-card-item>
         <v-card-item>
-          <select @change="sortProduct($event.target.value)">
+          <select v-model="selected" @change="sortProduct($event.target.value)">
             <option disabled selected>Sorteaza produsele</option>
             <option v-for="option in sortOptions" :key="option" :value="option">
               {{ option }}
@@ -86,6 +118,7 @@ import { defineComponent } from "vue";
 import CardProdus from "../components/CardProdus.vue";
 import { useCartStore } from "@/stores/cartStore";
 import { supabase } from "@/lib/supabaseClient";
+import { de, fi } from "vuetify/locale";
 
 const getProducts = async () => {
   try {
@@ -140,6 +173,15 @@ export default defineComponent({
       }
     },
 
+    displayAllProducts() {
+      supabase
+        .from("products")
+        .select("*")
+        .then((response) => {
+          this.products = response.data;
+        });
+    },
+
     filterOption(option) {
       supabase
         .from("products")
@@ -156,9 +198,9 @@ export default defineComponent({
         .select("*")
         .then((response) => {
           this.products = response.data;
-          this.$forceUpdate();
-          this.$router.push({ name: "StoreView" });
         });
+      this.selected = null;
+      this.sortOption = null;
     },
 
     addProductToCart() {
@@ -194,7 +236,7 @@ export default defineComponent({
 
 <style lang="css">
 select {
-  width: 300px;
+  width: 190px;
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: 1px solid purple;
@@ -213,6 +255,10 @@ select:hover {
 }
 select:focus {
   outline: none;
+  transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
 }
 select option {
   color: purple;
