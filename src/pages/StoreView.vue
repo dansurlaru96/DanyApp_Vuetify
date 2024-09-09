@@ -3,7 +3,7 @@
     <v-container>
       <v-card
         variant="tonal"
-        class="d-flex flex-wrap justify-center justify-space-evenly align-center ga-2"
+        class="d-flex flex-wrap justify-space-evenly align-center ga-2"
       >
         <v-card-item>
           <v-text-field
@@ -28,6 +28,7 @@
             v-model="selected"
           >
             <v-chip
+              value="null"
               density="default"
               color="deep-purple-darken-4"
               @click="displayAllProducts"
@@ -61,7 +62,7 @@
         </v-sheet>
         <v-card-item>
           <select v-model="selected" @change="sortProduct($event.target.value)">
-            <option disabled selected>Sorteaza produsele</option>
+            <option disabled selected value="null">Sorteaza produsele</option>
             <option v-for="option in sortOptions" :key="option" :value="option">
               {{ option }}
             </option>
@@ -119,7 +120,6 @@ import { defineComponent } from "vue";
 import CardProdus from "../components/CardProdus.vue";
 import { useCartStore } from "@/stores/cartStore";
 import { supabase } from "@/lib/supabaseClient";
-import { de, fi } from "vuetify/locale";
 
 const getProducts = async () => {
   try {
@@ -147,6 +147,7 @@ export default defineComponent({
         "Nume: A-Z",
         "Nume: Z-A",
       ],
+      selected: null,
       products: [],
     };
   },
@@ -201,7 +202,6 @@ export default defineComponent({
           this.products = response.data;
         });
       this.selected = null;
-      this.sortOption = null;
     },
 
     addProductToCart() {
@@ -272,5 +272,8 @@ select option:hover {
   -moz-transition: all 0.3s;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
+}
+select option:disabled {
+  color: grey;
 }
 </style>
