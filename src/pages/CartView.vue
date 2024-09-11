@@ -105,7 +105,13 @@
       <v-row>
         <v-col cols="12" sm="6">
           <v-card title="Adresa de livrare">
-            <v-form v-model="valid" ref="form" lazy-validation :rules="rules">
+            <v-form
+              class="ma-3"
+              v-model="valid"
+              ref="form"
+              lazy-validation
+              :rules="rules"
+            >
               <v-row>
                 <v-col cols="6">
                   <v-text-field
