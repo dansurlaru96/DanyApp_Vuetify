@@ -117,7 +117,7 @@
 
           <template v-slot:default="{ isActive }">
             <v-card title="CV-ul meu">
-              <v-img src="/public/assets/CV Daniel Surlaru_ROM.jpg"></v-img>
+              <v-img src="/public/assets/CV_Daniel_Surlaru_ROM.jpg?url"></v-img>
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn
