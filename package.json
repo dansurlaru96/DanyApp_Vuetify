@@ -10,6 +10,7 @@
   "dependencies": {
     "@mdi/font": "6.2.95",
     "@supabase/supabase-js": "^2.45.1",
+    "@tato30/vue-pdf": "^1.11.1",
     "axios": "^1.7.2",
     "core-js": "^3.34.0",
     "json": "^11.0.0",
@@ -20,6 +21,7 @@
     "server": "^1.0.39",
     "v-img": "^0.2.0",
     "vue": "^3.4.31",
+    "vue-pdf": "^4.3.0",
     "vue-recaptcha": "^3.0.0-alpha.2",
     "vuetify": "^3.5.8"
   },

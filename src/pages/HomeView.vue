@@ -101,7 +101,7 @@
           </v-chip>
         </div>
 
-        <v-dialog max-width="1000">
+        <v-dialog max-width="500">
           <template v-slot:activator="{ props: activatorProps }">
             <v-btn
               v-bind="activatorProps"
@@ -117,12 +117,7 @@
 
           <template v-slot:default="{ isActive }">
             <v-card title="CV-ul meu">
-              <iframe
-                width="100%"
-                height="700"
-                :src="'/assets/CV Daniel Surlaru_ROM.pdf'"
-              ></iframe>
-
+              <v-img src="/public/assets/CV Daniel Surlaru_ROM.jpg"></v-img>
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn
@@ -198,11 +193,7 @@ export default {
     CarouselImg,
     CardInfo,
   },
-  data() {
-    return {
-      pdfSource: "/assets/CV Daniel Surlaru_ROM.pdf",
-    };
-  },
+  data() {},
 
   methods: {
     downloadPdf() {
