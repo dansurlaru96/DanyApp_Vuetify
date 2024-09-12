@@ -105,7 +105,7 @@
           <template v-slot:activator="{ props: activatorProps }">
             <v-btn
               v-bind="activatorProps"
-              color="primary"
+              color="success"
               size="large"
               rounded="xl"
               prepend-icon="mdi-file-document"
