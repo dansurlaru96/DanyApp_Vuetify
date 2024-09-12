@@ -2,7 +2,7 @@
   <div>
     <v-parallax
       src="/assets/bg_parllax.jpg"
-      height="690"
+      height="770"
       jumbotron
       class="text-white"
     >
@@ -100,6 +100,50 @@
             Bootstrap
           </v-chip>
         </div>
+
+        <v-dialog max-width="1000">
+          <template v-slot:activator="{ props: activatorProps }">
+            <v-btn
+              v-bind="activatorProps"
+              color="primary"
+              size="large"
+              rounded="xl"
+              prepend-icon="mdi-file-document"
+              text="Vizualizează CV-ul meu"
+              variant="flat"
+              class="ma-4 text-center font-weight-bold"
+            ></v-btn>
+          </template>
+
+          <template v-slot:default="{ isActive }">
+            <v-card title="CV-ul meu">
+              <iframe
+                src="/assets/CV Daniel Surlaru_ROM.pdf"
+                width="100%"
+                height="700"
+              ></iframe>
+
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <v-btn
+                  text="Descarcă CV"
+                  color="primary"
+                  variant="flat"
+                  size="large"
+                  prepend-icon="mdi-download"
+                  href="/assets/CV Daniel Surlaru_ROM.pdf"
+                  download
+                ></v-btn>
+
+                <v-btn
+                  text="Închide"
+                  size="large"
+                  @click="isActive.value = false"
+                ></v-btn>
+              </v-card-actions>
+            </v-card>
+          </template>
+        </v-dialog>
       </div>
     </v-parallax>
 
