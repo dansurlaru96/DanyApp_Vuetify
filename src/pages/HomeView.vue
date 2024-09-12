@@ -118,9 +118,9 @@
           <template v-slot:default="{ isActive }">
             <v-card title="CV-ul meu">
               <iframe
-                src="/assets/CV Daniel Surlaru_ROM.pdf"
                 width="100%"
                 height="700"
+                :src="'/assets/CV Daniel Surlaru_ROM.pdf'"
               ></iframe>
 
               <v-card-actions>
@@ -191,11 +191,23 @@
 <script>
 import CarouselImg from "../components/CarouselImg.vue";
 import CardInfo from "../components/CardInfo.vue";
+
 export default {
   name: "HomeView",
   components: {
     CarouselImg,
     CardInfo,
+  },
+  data() {
+    return {
+      pdfSource: "/assets/CV Daniel Surlaru_ROM.pdf",
+    };
+  },
+
+  methods: {
+    downloadPdf() {
+      window.open(this.pdfSource, "_blank");
+    },
   },
 };
 </script>
