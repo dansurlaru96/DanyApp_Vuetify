@@ -111,7 +111,7 @@
               prepend-icon="mdi-file-document"
               text="Vizualizează CV-ul meu"
               variant="flat"
-              class="ma-4 text-center font-weight-bold"
+              class="ma-4"
             ></v-btn>
           </template>
 
