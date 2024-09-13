@@ -33,6 +33,13 @@
               to="/contact"
               >Contact</v-btn
             >
+            <v-btn
+              variant="flat"
+              color="amber-darken-1"
+              href="/assets/CV-Daniel-Surlaru_ROM.pdf"
+              target="_blank"
+              >Hire me</v-btn
+            >
 
             <v-divider
               class="mx-2 opacity-100"
@@ -65,6 +72,15 @@
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+        <v-btn
+          class="ma-4"
+          variant="flat"
+          color="amber-darken-3"
+          href="/assets/CV-Daniel-Surlaru_ROM.pdf"
+          target="_blank"
+          >Hire me</v-btn
+        >
+        <v-divider thickness="2"></v-divider>
 
         <v-container class="text-center">
           <v-btn
