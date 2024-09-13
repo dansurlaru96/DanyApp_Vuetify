@@ -4,7 +4,6 @@ import Vue from "@vitejs/plugin-vue";
 import Vuetify, { transformAssetUrls } from "vite-plugin-vuetify";
 import ViteFonts from "unplugin-fonts/vite";
 import VueRouter from "unplugin-vue-router/vite";
-import alias from "@rollup/plugin-alias";
 
 // Utilities
 import { defineConfig } from "vite";
@@ -12,16 +11,7 @@ import { fileURLToPath, URL } from "node:url";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  build: {
-    rollupOptions: {
-      external: ["vue"],
-    },
-  },
-
   plugins: [
-    alias({
-      entries: [{ find: "@", replacement: "/src" }],
-    }),
     VueRouter(),
     Vue({
       template: { transformAssetUrls },
