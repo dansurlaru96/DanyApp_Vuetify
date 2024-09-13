@@ -37,7 +37,7 @@
               variant="flat"
               color="amber-darken-1"
               href="/assets/CV-Daniel-Surlaru_ROM.pdf"
-              target="_blank"
+              download
               >Hire me</v-btn
             >
 
@@ -77,7 +77,7 @@
           variant="flat"
           color="amber-darken-3"
           href="/assets/CV-Daniel-Surlaru_ROM.pdf"
-          target="_blank"
+          download
           >Hire me</v-btn
         >
         <v-divider thickness="2"></v-divider>
