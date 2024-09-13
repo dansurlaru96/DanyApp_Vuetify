@@ -36,8 +36,8 @@
             <v-btn
               variant="flat"
               color="amber-darken-1"
-              href="/assets/CV-Daniel-Surlaru_ROM.pdf"
-              download
+              href="https://disk.yandex.md/i/BEG3LBUG1vNYGQ"
+              target="_blank"
               >Hire me</v-btn
             >
 
@@ -76,8 +76,8 @@
           class="ma-4"
           variant="flat"
           color="amber-darken-3"
-          href="/assets/CV-Daniel-Surlaru_ROM.pdf"
-          download
+          href="https://disk.yandex.md/i/BEG3LBUG1vNYGQ"
+          target="_blank"
           >Hire me</v-btn
         >
         <v-divider thickness="2"></v-divider>
