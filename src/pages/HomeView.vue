@@ -133,6 +133,7 @@
                 <v-btn
                   text="Închide"
                   size="large"
+                  prepend-icon="mdi-close"
                   @click="isActive.value = false"
                 ></v-btn>
               </v-card-actions>
