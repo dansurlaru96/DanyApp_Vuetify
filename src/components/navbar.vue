@@ -1,7 +1,7 @@
 <template lang="">
   <v-layout class="ma-8">
     <v-app-bar app scroll-behavior="hide" scroll-threshold="50">
-      <v-toolbar mobile-breakpoint="680" color="grey-darken-3">
+      <v-toolbar mobile="true" mobile-breakpoint="xs" color="grey-darken-3">
         <v-app-bar-nav-icon
           v-if="$vuetify.display.smAndDown"
           variant="text"
@@ -33,13 +33,30 @@
               to="/contact"
               >Contact</v-btn
             >
-            <v-btn
-              variant="flat"
-              color="amber-darken-1"
-              href="https://disk.yandex.md/i/BEG3LBUG1vNYGQ"
-              target="_blank"
-              >Hire me</v-btn
-            >
+
+            <v-menu transition="slide-y-transition">
+              <template v-slot:activator="{ props }">
+                <v-btn
+                  variant="flat"
+                  color="deep-purple"
+                  v-bind="props"
+                  append-icon="mdi-menu-down"
+                  >Hire me</v-btn
+                >
+              </template>
+              <v-list>
+                <v-list-item
+                  v-for="(option, index) in options"
+                  :key="index"
+                  :value="index"
+                  :href="option.href"
+                  :target="option.href"
+                  append-icon="mdi-open-in-new"
+                >
+                  <v-list-item-title>{{ option.title }}</v-list-item-title>
+                </v-list-item>
+              </v-list>
+            </v-menu>
 
             <v-divider
               class="mx-2 opacity-100"
@@ -72,14 +89,23 @@
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
-        <v-btn
-          class="ma-4"
-          variant="flat"
-          color="amber-darken-3"
-          href="https://disk.yandex.md/i/BEG3LBUG1vNYGQ"
-          target="_blank"
-          >Hire me</v-btn
-        >
+
+        <v-list-group active-color="deep-purple" fluid="true">
+          <template v-slot:activator="{ props }">
+            <v-list-item v-bind="props" title="Hire me"></v-list-item>
+          </template>
+
+          <v-list-item
+            v-for="(option, index) in options"
+            :key="index"
+            :title="option.title"
+            :value="index"
+            :href="option.href"
+            :target="option.href"
+            append-icon="mdi-open-in-new"
+          ></v-list-item>
+        </v-list-group>
+
         <v-divider thickness="2"></v-divider>
 
         <v-container class="text-center">
@@ -139,9 +165,6 @@
 <script>
 import { defineComponent } from "vue";
 import SocialBtn from "./SocialBtn.vue";
-import { ref } from "vue";
-
-const model = ref(true);
 
 export default defineComponent({
   name: "Navbar",
@@ -152,6 +175,17 @@ export default defineComponent({
     drawer: false,
     group: null,
     model: false,
+
+    options: [
+      {
+        title: "Românǎ CV",
+        href: "https://drive.google.com/file/d/1Hf9YaW3f-6zSHJippUoEbvsAKn-Qjr9q/view?usp=sharing",
+      },
+      {
+        title: "English Resume",
+        href: "https://drive.google.com/file/d/1fsn0DG4BKiJFx-7lzNEa6gNpDYMoZsye/view?usp=sharing",
+      },
+    ],
 
     items: [
       { title: "Acasă", link: "/home" },

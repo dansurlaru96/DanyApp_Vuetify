@@ -1,10 +1,18 @@
 <template>
-  <v-carousel :show-arrows="true">
+  <v-carousel
+    show-arrows="hover"
+    cycle
+    continuous
+    theme="white"
+    touch="true"
+    progress="blue"
+  >
     <v-carousel-item
       v-for="(item, i) in items"
       :key="i"
       :src="item.src"
       cover
+      eager="true"
     ></v-carousel-item>
   </v-carousel>
 </template>
