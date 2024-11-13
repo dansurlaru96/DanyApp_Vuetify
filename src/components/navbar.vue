@@ -65,6 +65,13 @@
               vertical
             ></v-divider>
             <SocialBtn class="d-flex justify-center pa-2" />
+            <v-btn
+              :ripple="false"
+              variant="plain"
+              rounded="0"
+              icon="mdi-theme-light-dark"
+              @click="toggleTheme"
+            ></v-btn>
           </v-toolbar-items>
         </template>
       </v-toolbar>
@@ -157,6 +164,13 @@
             href="https://music.apple.com/md/artist/dan-surlaru/1449898549"
             target="_blank"
           ></v-btn>
+          <v-btn
+            :ripple="false"
+            variant="plain"
+            rounded="0"
+            icon="mdi-theme-light-dark"
+            @click="toggleTheme"
+          ></v-btn>
         </v-container>
       </v-list>
     </v-navigation-drawer>
@@ -165,7 +179,7 @@
 <script>
 import { defineComponent } from "vue";
 import SocialBtn from "./SocialBtn.vue";
-
+import { useTheme } from "vuetify";
 export default defineComponent({
   name: "Navbar",
   components: {
@@ -195,6 +209,18 @@ export default defineComponent({
       { title: "Contact", link: "/contact" },
     ],
   }),
+  setup() {
+    const theme = useTheme();
+
+    function toggleTheme() {
+      theme.global.name.value = theme.global.current.value.dark
+        ? "light"
+        : "dark";
+    }
+    return {
+      toggleTheme,
+    };
+  },
 });
 </script>
 <style lang=""></style>
